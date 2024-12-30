@@ -27,11 +27,6 @@ a:hover {
     text-decoration: underline;
 }
 
-a:focus {
-    outline: 2px solid #1a73e8;
-    outline-offset: 2px;
-}
-
 /* Header */
 header {
     background-color: #333;
@@ -67,11 +62,6 @@ nav ul li a {
     color: #333;
     font-weight: bold;
     font-size: 16px;
-}
-
-nav ul li a:hover {
-    color: #1a73e8;
-    border-bottom: 2px solid #1a73e8;
 }
 
 /* Project Details */
@@ -114,7 +104,8 @@ nav ul li a:hover {
 
 .project img {
     width: 100%;
-    height: auto;
+    height: 180px; /* Set the same height for all images */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
     border-radius: 8px;
     margin-bottom: 15px;
 }
@@ -129,25 +120,6 @@ nav ul li a:hover {
     font-size: 16px;
 }
 
-/* Image Gallery */
-.image-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.image-gallery img {
-    max-width: 250px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.image-gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
 /* Footer */
 footer {
     background-color: #333;
@@ -158,19 +130,4 @@ footer {
 
 footer p {
     font-size: 14px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
 }
