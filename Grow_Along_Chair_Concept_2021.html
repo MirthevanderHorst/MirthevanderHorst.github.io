@@ -21,6 +21,7 @@
             width: 100%;
             height: auto;
             border-radius: 8px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -50,34 +51,34 @@
 
             <h3>Renders:</h3>
             <div class="image-gallery">
-                <img src="https://github.com/user-attachments/assets/d2a4dec2-63d2-4750-a39a-4b9b0086003f" alt="Grow-along chair6">
-                <img src="https://github.com/user-attachments/assets/48345514-cb8e-4fc7-b642-f3b643e950ff" alt="Grow-along chair8">
-                <img src="https://github.com/user-attachments/assets/bd56a391-c10a-4697-b140-a93aaeff29d9" alt="Grow-along chair3">
-                <img src="https://github.com/user-attachments/assets/6369c672-f514-470b-86e2-7cb2fcfbea3c" alt="Grow-along chair7">
-                <img src="https://github.com/user-attachments/assets/75b1f93f-00e7-4720-9447-29c6803b07b1" alt="Grow-along chair9">
-                <img src="https://github.com/user-attachments/assets/e97f7677-66b3-48c9-9ff4-359b40ffddb8" alt="Grow-along chair20">
+                <img src="https://github.com/user-attachments/assets/d2a4dec2-63d2-4750-a39a-4b9b0086003f" alt="Grow-along chair6" class="lightbox-trigger">
+                <img src="https://github.com/user-attachments/assets/48345514-cb8e-4fc7-b642-f3b643e950ff" alt="Grow-along chair8" class="lightbox-trigger">
+                <img src="https://github.com/user-attachments/assets/bd56a391-c10a-4697-b140-a93aaeff29d9" alt="Grow-along chair3" class="lightbox-trigger">
+                <img src="https://github.com/user-attachments/assets/6369c672-f514-470b-86e2-7cb2fcfbea3c" alt="Grow-along chair7" class="lightbox-trigger">
+                <img src="https://github.com/user-attachments/assets/75b1f93f-00e7-4720-9447-29c6803b07b1" alt="Grow-along chair9" class="lightbox-trigger">
+                <img src="https://github.com/user-attachments/assets/e97f7677-66b3-48c9-9ff4-359b40ffddb8" alt="Grow-along chair20" class="lightbox-trigger">
             </div>
 
             <h3>Blender Importing Models Experiment:</h3>
             <div class="image-gallery">
-                <img src="https://github.com/user-attachments/assets/501edd2a-575d-40b2-abc2-ad217fdfcfb3" alt="Grow-along chair2">
-                <img src="https://github.com/user-attachments/assets/1717deed-b871-4020-8364-6c24a794fa94" alt="Grow-along chair13">
-                <img src="https://github.com/user-attachments/assets/bb72a775-53d3-424e-a988-ec2d9f3db439" alt="Grow-along chair14">
-                <img src="https://github.com/user-attachments/assets/5e6aabc6-68bd-4c21-b9ae-2a6cc3bc1c30" alt="Grow-along chair15">
+                <img src="https://github.com/user-attachments/assets/501edd2a-575d-40b2-abc2-ad217fdfcfb3" alt="Grow-along chair2" class="lightbox-trigger">
+                <img src="https://github.com/user-attachments/assets/1717deed-b871-4020-8364-6c24a794fa94" alt="Grow-along chair13" class="lightbox-trigger">
+                <img src="https://github.com/user-attachments/assets/bb72a775-53d3-424e-a988-ec2d9f3db439" alt="Grow-along chair14" class="lightbox-trigger">
+                <img src="https://github.com/user-attachments/assets/5e6aabc6-68bd-4c21-b9ae-2a6cc3bc1c30" alt="Grow-along chair15" class="lightbox-trigger">
             </div>
 
             <h3>Fusion360 Material Experiments:</h3>
             <div class="image-gallery">
-                <img src="https://github.com/user-attachments/assets/ef9ff492-c707-4a87-bb78-de820cee31de" alt="Grow-along chair1">
-                <img src="https://github.com/user-attachments/assets/b286b376-9be4-4f35-9d42-8fb12097438b" alt="Grow-along chair10">
-                <img src="https://github.com/user-attachments/assets/c1730338-db81-4739-9e8e-d1b502047fbf" alt="Grow-along chair11">
-                <img src="https://github.com/user-attachments/assets/055d5dac-e83e-4169-8fe5-781a762151a7" alt="Grow-along chair19">
+                <img src="https://github.com/user-attachments/assets/ef9ff492-c707-4a87-bb78-de820cee31de" alt="Grow-along chair1" class="lightbox-trigger">
+                <img src="https://github.com/user-attachments/assets/b286b376-9be4-4f35-9d42-8fb12097438b" alt="Grow-along chair10" class="lightbox-trigger">
+                <img src="https://github.com/user-attachments/assets/c1730338-db81-4739-9e8e-d1b502047fbf" alt="Grow-along chair11" class="lightbox-trigger">
+                <img src="https://github.com/user-attachments/assets/055d5dac-e83e-4169-8fe5-781a762151a7" alt="Grow-along chair19" class="lightbox-trigger">
             </div>
 
             <h3>Weltevree Inspiration:</h3>
             <p>This is NOT my image, all rights belong to Weltevree. I just used it as inspiration.</p>
             <div class="image-gallery">
-                <img src="https://github.com/user-attachments/assets/3112d399-8456-4d47-8541-49cadb3549f2" alt="Weltevree Furniture Inspiration">
+                <img src="https://github.com/user-attachments/assets/3112d399-8456-4d47-8541-49cadb3549f2" alt="Weltevree Furniture Inspiration" class="lightbox-trigger">
             </div>
         </div>
     </section>
@@ -87,6 +88,14 @@
             <p>&copy; 2024 [Your Name]. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-img" src="" alt="Enlarged Image">
+    </div>
+
+    <script src="js/lightbox.js"></script>
 </body>
 
 </html>
