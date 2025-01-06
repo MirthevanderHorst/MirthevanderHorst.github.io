@@ -95,7 +95,7 @@ nav ul li a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
     overflow: hidden;
-    height: 350px; /* Fixed height for all project boxes */
+    height: 275px; /* Fixed height for all project boxes */
     width: auto; /* Width adjusts based on the image's width */
 }
 
@@ -108,7 +108,7 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px; /* Fixed height */
+    height: 225px; /* Fixed height */
     width: auto; /* Width of the image will adjust */
     overflow: hidden;
     border-radius: 8px;
