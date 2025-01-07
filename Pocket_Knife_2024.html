@@ -11,7 +11,7 @@
     <style>
         /* Specific header styles for the Pocket Knife project page */
         #header {
-            background-color: #f4f4f4;
+            background-color: #fff;
             padding: 10px 0; /* Decreased top and bottom padding */
             text-align: center;
         }
@@ -39,7 +39,14 @@
             height: auto;
             border-radius: 8px;
             cursor: pointer;
+            transition: transform 0.3s ease; /* Smooth transition for the hover effect */
         }
+
+        /* Enlarge images on hover */
+        .image-gallery img:hover {
+            transform: scale(1.05); /* Slightly enlarge the image */
+        }
+
 
         /* Modal Styles */
         .modal {
@@ -110,13 +117,26 @@
             padding: 10px 15px; /* Add padding to the links for better spacing */
         }
 
+        /* Header as a button */
+        #header h1 a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        #header h1 a:hover {
+            color: #12372A; /* Lighter green color on hover */
+        }
+
     </style>
 </head>
 
 <body>
     <header id="header">
         <div class="container">
-            <h1>Mirthe van der Horst</h1>
+            <h1><a href="index.html#about">Mirthe van der Horst</a></h1>
         </div>
     </header>
 
@@ -162,15 +182,18 @@
         const images = document.querySelectorAll('.image-gallery img');
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');
+        let currentIndex = 0; // Variable to track the currently displayed image
 
-        images.forEach((img) => {
+        // Open modal and display clicked image
+        images.forEach((img, index) => {
             img.addEventListener('click', function () {
                 modal.style.display = 'flex';
                 modalImg.src = this.src;
+                currentIndex = index; // Set current index when image is clicked
             });
         });
 
-        // Close the modal when clicked on close button
+        // Close the modal
         function closeModal() {
             modal.style.display = 'none';
         }
@@ -179,6 +202,21 @@
         modal.addEventListener('click', function (e) {
             if (e.target === modal) {
                 closeModal();
+            }
+        });
+
+        // Function to navigate through images using arrow keys
+        document.addEventListener('keydown', function (event) {
+            if (modal.style.display === 'flex') {
+                if (event.key === 'ArrowRight') {
+                    // Show next image
+                    currentIndex = (currentIndex + 1) % images.length;
+                    modalImg.src = images[currentIndex].src;
+                } else if (event.key === 'ArrowLeft') {
+                    // Show previous image
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    modalImg.src = images[currentIndex].src;
+                }
             }
         });
     </script>

@@ -13,8 +13,8 @@
 <body>
     <header>
         <div class="container">
-            <h1>Mirthe van der Horst</h1>
-            <p>Woodworker and Furniture Maker</p>
+            <h1><a href="#about" style="color: inherit; text-decoration: none;">Mirthe van der Horst</a></h1>
+            <p><a href="#about" style="color: inherit; text-decoration: none;">Woodworker and Furniture Maker</a></p>
         </div>
     </header>
 
@@ -34,7 +34,8 @@
                     <p>Hello! I'm Mirthe, a passionate woodworker that makes all different kinds of things.</p>
                 </div>
                 <div class="about-image">
-                    <img src="images/self_portrait_5.jpg" alt="Self Portrait">
+                    <!-- Make the image clickable to open in a modal -->
+                    <img src="images/self_portrait_5.jpg" alt="Self Portrait" id="about-image">
                 </div>
             </div>
             <div class="about-extra">
@@ -42,33 +43,19 @@
                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                      . Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
                       sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                . Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                    . Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <button id="about-toggle-read-less">Read Less</button>
             </div>
             <button id="about-toggle">Read More</button>
         </div>
     </section>
-    
-    
-    <script>
-        // Toggle "Read More / Read Less" functionality
-        document.getElementById("about-toggle").addEventListener("click", function () {
-            const extraContent = document.querySelector(".about-extra");
-            const toggleButton = document.getElementById("about-toggle");
-
-            // Toggle visibility of extra content and button text
-            extraContent.style.display = (extraContent.style.display === "block") ? "none" : "block";
-            toggleButton.textContent = (extraContent.style.display === "block") ? "Read Less" : "Read More";
-        });
-
-        // Ensure the About Me section opens when the navigation link is clicked
-        document.getElementById("about-link").addEventListener("click", function() {
-            const extraContent = document.querySelector(".about-extra");
-            if (extraContent.style.display === "none" || extraContent.style.display === "") {
-                extraContent.style.display = "block";
-                document.getElementById("about-toggle").textContent = "Read Less";
-            }
-        });
-    </script>
 
     <section id="projects">
         <div class="container">
@@ -196,19 +183,70 @@
             <p>If you're interested in my work or would like to commission a project, feel free to get in touch!</p>
             <p>Email: <a href="mailto:myemail@gmail.com">myemail@gmail.com</a></p>
             <p>
-                <a href="https://www.linkedin.com/in/mirthevanderhorst/" target="https://www.linkedin.com/in/mirthevanderhorst/">LinkedIn</a> | 
-                <a href="https://www.instagram.com/mirthevdhorst/" target="https://www.instagram.com/mirthevdhorst/">Instagram</a> |
-                <a href="https://github.com/MirthevanderHorst" target="https://github.com/MirthevanderHorst">Github</a>
+                <a href="https://www.linkedin.com/in/mirthevanderhorst/" target="_blank">LinkedIn</a> | 
+                <a href="https://www.instagram.com/mirthevdhorst/" target="_blank">Instagram</a> |
+                <a href="https://github.com/MirthevanderHorst" target="_blank">Github</a>
             </p>
         </div>
     </section>
-    
 
     <footer>
         <div class="container">
             <p>&copy; 2025 Mirthe van der Horst. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Modal for Enlarged Image -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" src="">
+    </div>
+
+    <script>
+        // Toggle "Read More / Read Less" functionality
+        document.getElementById("about-toggle").addEventListener("click", function () {
+            const extraContent = document.querySelector(".about-extra");
+            const toggleButton = document.getElementById("about-toggle");
+
+            // Toggle visibility of extra content and button text
+            extraContent.style.display = (extraContent.style.display === "block") ? "none" : "block";
+            toggleButton.textContent = (extraContent.style.display === "block") ? "Read Less" : "Read More";
+        });
+
+        // Ensure the About Me section opens when the navigation link is clicked
+        document.getElementById("about-link").addEventListener("click", function () {
+            const extraContent = document.querySelector(".about-extra");
+            if (extraContent.style.display === "none" || extraContent.style.display === "") {
+                extraContent.style.display = "block";
+                document.getElementById("about-toggle").textContent = "Read Less";
+            }
+        });
+
+        // Image Modal for Enlarged Image
+        const image = document.getElementById('about-image');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeModalBtn = document.querySelector('.close');
+
+        // Open the modal when the image is clicked
+        image.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevents default behavior
+            modal.style.display = 'flex';
+            modalImg.src = this.src; // Set the modal image source to the clicked image
+        });
+
+        // Close the modal when the close button is clicked
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close modal if the user clicks outside of the modal
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 
 </html>

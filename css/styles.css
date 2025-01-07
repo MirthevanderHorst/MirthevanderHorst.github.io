@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #fff;
     color: #333;
 }
 
@@ -15,7 +15,7 @@ body {
 }
 
 h1 {
-    color: #f9f9f9;
+    color: #fff;
 }
 
 h2, h3 {
@@ -24,33 +24,39 @@ h2, h3 {
 
 a {
     text-decoration: none;
-    color: #f9f9f9;
+    color: #fff;
 }
 
-a:hover {
-    text-decoration: underline;
-}
 
 /* Header */
 header {
     background-image: url('../images/background_2.jpg'); /* Replace with the path to your image */
     background-size: cover; /* Ensures the image covers the entire header */
     background-position: center 38%; /* Keeps the image centered */
-    color: #f9f9f9;
-    padding: 15%;
+    color: #fff;
+    padding: 16%;
     text-align: center;
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
-header h1 {
+/* Make sure both h1 and p start with normal size */
+header h1,
+header p {
     font-size: 50px;
     margin: 0;
+    transition: transform 0.4s ease; /* Smooth transition for the hover effect */
 }
 
 header p {
     font-size: 25px;
-    margin-top: 0px;
 }
+
+/* Ensure both text elements grow when hovering over either of them */
+header h1:hover, header p:hover,
+header h1:hover ~ p, header p:hover ~ h1 {
+    transform: scale(1.05); /* Enlarge both */
+}
+
 
 /* Navigation bar */
 nav {
@@ -83,6 +89,13 @@ nav ul li a {
     font-weight: bold;
     font-size: 16px;
     padding: 10px 15px; /* Add padding to the links for better spacing */
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+    display: inline-block; /* Make the link an inline block for scaling */
+}
+
+/* Enlarge the text when hovering over the nav links */
+nav ul li a:hover {
+    transform: scale(1.3); /* Enlarge the text by 10% */
 }
 
 
@@ -129,16 +142,22 @@ nav ul li a {
     right: 10%; /* Align the image to the right edge of the section */
 }
 
+/* About Me Section - Image Styles */
 .about-image img {
-    width: 200px; /* Fixed size for the circular container */
-    height: 200px; /* Same as width for a perfect circle */
-    border-radius: 50%; /* Makes image circular */
+    width: 240px; /* Fixed size for the circular container */
+    height: 240px; /* Same as width for a perfect circle */
+    border-radius: 30%; /* Makes image circular */
     object-fit: cover; /* Ensures image covers the circle */
     object-position: center 60%; /* Focus on the top of the image */
-    transform: scale(1.2); /* Zooms in on the image (adjust as needed) */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    transition: none; /* Ensure no transition is applied */
 }
 
+/* Prevent Image from enlarging on hover */
+.about-image img:hover {
+    transform: none !important; /* Force removal of any scaling or transformation */
+    transition: none !important; /* Ensure no transition effect occurs */
+}
 
 /* Button Styling */
 #about-toggle {
@@ -156,6 +175,7 @@ nav ul li a {
 
 #about-toggle:hover {
     background-color: #627254;
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 /* Ensure Button Appears Below the Text in Expanded Section */
@@ -165,12 +185,41 @@ nav ul li a {
     text-align: center;
 }
 
-
 /* Hide "Read Less" Button Initially */
 #about-toggle-read-less {
     display: none;
 }
 
+/* Modal Styles for Enlarged Image */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 /* Projects Section */
 #projects {
@@ -201,13 +250,14 @@ nav ul li a {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transform transition */
     overflow: hidden;
     height: 275px;
     width: auto;
 }
 
 .project:hover {
+    transform: scale(1.15); /* Slightly scale up the project box */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -219,7 +269,7 @@ nav ul li a {
     width: auto;
     overflow: hidden;
     border-radius: 8px;
-    background-color: #f0f0f0;
+    background-color: #fff;
 }
 
 .thumbnail img {
@@ -255,11 +305,15 @@ nav ul li a {
 footer {
     background-color: #12372A;
     height: 10%; /* Set the height of the navigation bar */
-    color: white;
+    color: #fff;
     text-align: center;
-    
 }
 
 footer p {
     font-size: 14px;
+}
+
+/* Enable smooth scrolling across the page */
+html {
+    scroll-behavior: smooth;
 }
