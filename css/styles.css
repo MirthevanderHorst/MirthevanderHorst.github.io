@@ -101,7 +101,7 @@ nav ul li a {
     margin-top: 20px;
     line-height: 1.6;
     text-align: left;
-    padding-right: 35%; /* Adds room for the image */
+    padding-right: 25%; /* Adds room for the image */
     padding-bottom: 20px;
 }
 
@@ -116,7 +116,7 @@ nav ul li a {
     margin-left: 20px; /* Adds space between the image and text */
     position: absolute; /* Position absolutely within the section */
     top: 80px; /* Align the top of the image with the top of the h2 title */
-    right: 300px; /* Align the image to the right edge of the section */
+    right: 10%; /* Align the image to the right edge of the section */
 }
 
 .about-image img {
