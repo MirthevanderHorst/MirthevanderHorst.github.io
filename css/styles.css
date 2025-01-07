@@ -14,13 +14,17 @@ body {
     padding: 20px;
 }
 
-h1, h2, h3 {
-    color: #333;
+h1 {
+    color: #f9f9f9;
+}
+
+h2, h3 {
+    color: #12372A;
 }
 
 a {
     text-decoration: none;
-    color: #333;
+    color: #f9f9f9;
 }
 
 a:hover {
@@ -31,9 +35,9 @@ a:hover {
 header {
     background-image: url('../images/background_2.jpg'); /* Replace with the path to your image */
     background-size: cover; /* Ensures the image covers the entire header */
-    background-position: center 35%; /* Keeps the image centered */
-    color: #333;
-    padding: 16%;
+    background-position: center 38%; /* Keeps the image centered */
+    color: #f9f9f9;
+    padding: 15%;
     text-align: center;
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
