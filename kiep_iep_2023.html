@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MvdH Portfolio - Kiep-iep</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific header styles for the project page */
+        #header {
+            background-color: #f4f4f4;
+            padding: 10px 0; /* Decreased top and bottom padding */
+            text-align: center;
+        }
+
+        #header h1 {
+            font-size: 2rem; /* Smaller font size for the header */
+            margin: 0;
+        }
+
+        #header p {
+            font-size: 1rem; /* Adjust the paragraph text size */
+            margin: 5px 0;
+        }
+
+        /* Grid for the image gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000; /* Higher z-index to ensure it goes over the nav bar */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            margin: 0 auto;
+            object-fit: contain;
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #12372A; /* Dark gray background */
+            height: 50px; /* Set the height of the navigation bar */
+            padding: 0 20px; /* Optional: adds padding to the left and right sides */
+            display: flex; /* Use Flexbox to align the items */
+            justify-content: center; /* Centers the links horizontally */
+            align-items: center; /* Centers the links vertically */
+            position: sticky; /* Makes the navigation bar stick to the top */
+            top: 0; /* Ensures it's at the top of the screen */
+            z-index: 1000; /* Keeps the nav on top of other elements */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Adds a soft shadow under the nav */
+        }
+
+        /* Navigation links styles */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Use Flexbox on the list */
+        }
+
+        nav ul li {
+            margin-right: 20px; /* Adds space between the list items */
+        }
+
+        nav ul li a {
+            color: #fff; /* Make the links white to stand out on the dark background */
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 15px; /* Add padding to the links for better spacing */
+        }
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <h1>Kiep iep - 2023</h1>
+            <p>Solid Elm Chair.</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html#about" id="about-link">About Me</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="project-details">
+        <div class="container">
+            <h2>Kiep-iep Project</h2>
+            <p>This is a very pretty chair :) Insanely slay.</p>
+
+            <h3>Images:</h3>
+            <div class="image-gallery">
+                <img src="images/kiep_iep_1.jpg" alt="kiep iep 1">
+                <img src="images/kiep_iep_2.jpg" alt="kiep iep 2">
+                <img src="images/kiep_iep_3.jpg" alt="kiep iep 3">
+                <img src="images/kiep_iep_4.jpg" alt="kiep iep 4">
+                <img src="images/kiep_iep_5.jpg" alt="kiep iep 5">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mirthe van der Horst. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Enlarged Image -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" src="">
+    </div>
+
+    <script>
+        // Function to open the modal with the clicked image
+        const images = document.querySelectorAll('.image-gallery img');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+
+        images.forEach((img) => {
+            img.addEventListener('click', function () {
+                modal.style.display = 'flex';
+                modalImg.src = this.src;
+            });
+        });
+
+        // Close the modal when clicked on close button
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close the modal when clicking outside the image (on the background)
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

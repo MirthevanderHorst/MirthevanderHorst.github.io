@@ -5,10 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pocket Knife Project - 2024 - Woodworking Portfolio</title>
+    <title>MvdH Portfolio - Pocket Knife</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Specific header styles for the Pocket Knife project page */
+        #pocket-knife-header {
+            background-color: #f4f4f4;
+            padding: 10px 0; /* Decreased top and bottom padding */
+            text-align: center;
+        }
+
+        #pocket-knife-header h1 {
+            font-size: 2rem; /* Smaller font size for the header */
+            margin: 0;
+        }
+
+        #pocket-knife-header p {
+            font-size: 1rem; /* Adjust the paragraph text size */
+            margin: 5px 0;
+        }
+
         /* Grid for the image gallery */
         .image-gallery {
             display: grid;
@@ -28,7 +45,7 @@
         .modal {
             display: none;
             position: fixed;
-            z-index: 1;
+            z-index: 2000; /* Higher z-index to ensure it goes over the nav bar */
             left: 0;
             top: 0;
             width: 100%;
@@ -54,44 +71,84 @@
             font-weight: bold;
             cursor: pointer;
         }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #12372A; /* Dark gray background */
+            height: 50px; /* Set the height of the navigation bar */
+            padding: 0 20px; /* Optional: adds padding to the left and right sides */
+            display: flex; /* Use Flexbox to align the items */
+            justify-content: center; /* Centers the links horizontally */
+            align-items: center; /* Centers the links vertically */
+            position: sticky; /* Makes the navigation bar stick to the top */
+            top: 0; /* Ensures it's at the top of the screen */
+            z-index: 1000; /* Keeps the nav on top of other elements */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Adds a soft shadow under the nav */
+        }
+
+        /* Navigation links styles */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Use Flexbox on the list */
+        }
+
+        nav ul li {
+            margin-right: 20px; /* Adds space between the list items */
+        }
+
+        nav ul li a {
+            color: #fff; /* Make the links white to stand out on the dark background */
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 15px; /* Add padding to the links for better spacing */
+        }
+
     </style>
 </head>
 
 <body>
-    <header>
+    <header id="pocket-knife-header">
         <div class="container">
-            <h1>Pocket Knife Project - July 2024</h1>
-            <p>Finally finished my first pocket knife!</p>
+            <h1>Pocket Knife - July 2024</h1>
+            <p>Wood carving.</p>
         </div>
     </header>
 
     <nav>
         <ul>
-            <li><a href="index.html">Back to Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html#about" id="about-link">About Me</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
         </ul>
     </nav>
 
     <section id="project-details">
         <div class="container">
-            <h2>Project Overview</h2>
+            <h2>Pocket Knife Project</h2>
             <p>Finally finished my first pocket knife! I started working on it around 4-5 years ago (I think 2019) and then forgot about it, letting it rot in the shed for a few years (oops). Last week, I found it again and decided to finally sand and oil it. I am so happy with how it turned out!</p>
             <p>This knife is made completely from scratch wood (Walnut and Wenge) and metal. The only tools I used for this project were an old hand saw, a file, and some sandpaper, so it took a while to make. Maybe it’s time to invest in some proper woodworking tools; joining wood pieces without a bench plane or chisel can be a pain!</p>
             <p>The metal of this knife is too soft to properly sharpen and use for anything other than butter, but I still think it turned out pretty cool. Maybe in the future, I will make another one with proper materials!😊</p>
 
             <h3>Images:</h3>
             <div class="image-gallery">
-                <img src="https://github.com/user-attachments/assets/c2189d42-2bec-4583-8e34-2e48c830c5cf" alt="Pocket Knife 1">
-                <img src="https://github.com/user-attachments/assets/d611ef0e-79cd-40ed-9292-608965ae1f08" alt="Pocket Knife 5">
-                <img src="https://github.com/user-attachments/assets/1d1abd97-ef92-490b-be0c-ce4038477d69" alt="Pocket Knife 3">
-                <img src="https://github.com/user-attachments/assets/52907577-c146-4eff-8294-da5daa4193f2" alt="Pocket Knife 2">
+                <img src="images/pocket_knife_1.jpg" alt="Pocket Knife 1">
+                <img src="images/pocket_knife_2.jpg" alt="Pocket Knife 2">
+                <img src="images/pocket_knife_3.jpg" alt="Pocket Knife 3">
+                <img src="images/pocket_knife_4.jpg" alt="Pocket Knife 4">
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 [Your Name]. All Rights Reserved.</p>
+            <p>&copy; 2025 Mirthe van der Horst. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -114,3 +171,18 @@
             });
         });
 
+        // Close the modal when clicked on close button
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close the modal when clicking outside the image (on the background)
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

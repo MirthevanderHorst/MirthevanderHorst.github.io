@@ -33,7 +33,7 @@ header {
     background-size: cover; /* Ensures the image covers the entire header */
     background-position: center 35%; /* Keeps the image centered */
     color: #333;
-    padding: 20px 0;
+    padding: 16%;
     text-align: center;
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
@@ -48,7 +48,7 @@ header p {
     margin-top: 0px;
 }
 
-
+/* Navigation bar */
 nav {
     background-color: #12372A; /* Dark gray background */
     height: 50px; /* Set the height of the navigation bar */
@@ -56,8 +56,13 @@ nav {
     display: flex; /* Use Flexbox to align the items */
     justify-content: center; /* Centers the links horizontally */
     align-items: center; /* Centers the links vertically */
+    position: sticky; /* Makes the navigation bar stick to the top */
+    top: 0; /* Ensures it's at the top of the screen */
+    z-index: 1000; /* Keeps the nav on top of other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Adds a soft shadow under the nav */
 }
 
+/* Navigation links styles */
 nav ul {
     list-style: none;
     padding: 0;
@@ -75,6 +80,7 @@ nav ul li a {
     font-size: 16px;
     padding: 10px 15px; /* Add padding to the links for better spacing */
 }
+
 
 
 /* About Me Section */
@@ -244,9 +250,10 @@ nav ul li a {
 /* Footer */
 footer {
     background-color: #12372A;
+    height: 10%; /* Set the height of the navigation bar */
     color: white;
-    padding: 20px 0;
     text-align: center;
+    
 }
 
 footer p {
