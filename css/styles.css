@@ -20,7 +20,7 @@ h1, h2, h3 {
 
 a {
     text-decoration: none;
-    color: #1a73e8;
+    color: #333;
 }
 
 a:hover {
@@ -29,40 +29,138 @@ a:hover {
 
 /* Header */
 header {
-    background-color: #333;
-    color: white;
-    padding: 40px 0;
+    background-image: url('../images/background_2.jpg'); /* Replace with the path to your image */
+    background-size: cover; /* Ensures the image covers the entire header */
+    background-position: center 35%; /* Keeps the image centered */
+    color: #333;
+    padding: 20px 0;
     text-align: center;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
 header h1 {
-    font-size: 25%;
+    font-size: 50px;
     margin: 0;
 }
 
 header p {
-    font-size: 36px;
-    margin-top: 10px;
+    font-size: 25px;
+    margin-top: 0px;
 }
 
-/* Navigation */
+
+nav {
+    background-color: #12372A; /* Dark gray background */
+    height: 50px; /* Set the height of the navigation bar */
+    padding: 0 20px; /* Optional: adds padding to the left and right sides */
+    display: flex; /* Use Flexbox to align the items */
+    justify-content: center; /* Centers the links horizontally */
+    align-items: center; /* Centers the links vertically */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
-    text-align: center;
+    margin: 0;
+    display: flex; /* Use Flexbox on the list */
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    margin-right: 20px; /* Adds space between the list items */
 }
 
 nav ul li a {
-    color: #333;
+    color: #fff; /* Make the links white to stand out on the dark background */
     font-weight: bold;
     font-size: 16px;
+    padding: 10px 15px; /* Add padding to the links for better spacing */
 }
+
+
+/* About Me Section */
+#about {
+    background-color: #fff;
+    padding: 40px 0;
+    position: relative;
+}
+
+#about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    margin-top: 0; /* Ensure the heading has no top margin */
+}
+
+/* Adjustments to About Me Content */
+.about-content {
+    padding-right: 35%; /* Adds room for the image */
+    clear: both; /* Ensures content starts after the image */
+}
+
+.about-extra {
+    display: none;
+    margin-top: 20px;
+    line-height: 1.6;
+    text-align: left;
+    padding-right: 35%; /* Adds room for the image */
+    padding-bottom: 20px;
+}
+
+.about-extra p {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* Image Alignment (Align to top-right corner of the title) */
+.about-image {
+    float: right; /* Float image to the right */
+    margin-left: 20px; /* Adds space between the image and text */
+    position: absolute; /* Position absolutely within the section */
+    top: 80px; /* Align the top of the image with the top of the h2 title */
+    right: 300px; /* Align the image to the right edge of the section */
+}
+
+.about-image img {
+    width: 200px; /* Fixed size for the circular container */
+    height: 200px; /* Same as width for a perfect circle */
+    border-radius: 50%; /* Makes image circular */
+    object-fit: cover; /* Ensures image covers the circle */
+    object-position: center 60%; /* Focus on the top of the image */
+    transform: scale(1.2); /* Zooms in on the image (adjust as needed) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+
+/* Button Styling */
+#about-toggle {
+    background-color: #436850;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#about-toggle:hover {
+    background-color: #627254;
+}
+
+/* Ensure Button Appears Below the Text in Expanded Section */
+.about-extra #about-toggle {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+
+/* Hide "Read Less" Button Initially */
+#about-toggle-read-less {
+    display: none;
+}
+
 
 /* Projects Section */
 #projects {
@@ -80,7 +178,7 @@ nav ul li a {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; /* Left align to maintain even spacing */
+    justify-content: center;
     margin-top: 30px;
 }
 
@@ -95,30 +193,29 @@ nav ul li a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
     overflow: hidden;
-    height: 275px; /* Fixed height for all project boxes */
-    width: auto; /* Width adjusts based on the image's width */
+    height: 275px;
+    width: auto;
 }
 
 .project:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Thumbnail Images with Same Height, Flexible Width */
 .thumbnail {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 225px; /* Fixed height */
-    width: auto; /* Width of the image will adjust */
+    height: 225px;
+    width: auto;
     overflow: hidden;
     border-radius: 8px;
     background-color: #f0f0f0;
 }
 
 .thumbnail img {
-    height: 100%; /* Ensures all images match the container height */
-    width: auto; /* Width adjusts based on the image aspect ratio */
-    object-fit: contain; /* Maintain aspect ratio while fitting in container */
+    height: 100%;
+    width: auto;
+    object-fit: contain;
     border-radius: 8px;
 }
 
@@ -132,10 +229,21 @@ nav ul li a {
     font-size: 16px;
 }
 
+/* Contact Links */
+#contact a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #12372A;
     color: white;
     padding: 20px 0;
     text-align: center;

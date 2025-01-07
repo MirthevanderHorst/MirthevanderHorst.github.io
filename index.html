@@ -13,14 +13,14 @@
 <body>
     <header>
         <div class="container">
-            <h1>Welcome to My Woodworking Portfolio</h1>
-            <p>Explore my projects and craftsmanship!</p>
+            <h1>Mirthe van der Horst</h1>
+            <p>Woodworker and Furniture Maker</p>
         </div>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#about">About Me</a></li>
+            <li><a href="#about" id="about-link">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -29,9 +29,46 @@
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>Hello! I'm Mirthe, a passionate woodworker that makes all different kinds of things.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Mirthe, a passionate woodworker that makes all different kinds of things.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/self_portrait_5.jpg" alt="Self Portrait">
+                </div>
+            </div>
+            <div class="about-extra">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                     . Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <button id="about-toggle-read-less">Read Less</button>
+            </div>
+            <button id="about-toggle">Read More</button>
         </div>
     </section>
+    
+    
+    <script>
+        // Toggle "Read More / Read Less" functionality
+        document.getElementById("about-toggle").addEventListener("click", function () {
+            const extraContent = document.querySelector(".about-extra");
+            const toggleButton = document.getElementById("about-toggle");
+
+            // Toggle visibility of extra content and button text
+            extraContent.style.display = (extraContent.style.display === "block") ? "none" : "block";
+            toggleButton.textContent = (extraContent.style.display === "block") ? "Read Less" : "Read More";
+        });
+
+        // Ensure the About Me section opens when the navigation link is clicked
+        document.getElementById("about-link").addEventListener("click", function() {
+            const extraContent = document.querySelector(".about-extra");
+            if (extraContent.style.display === "none" || extraContent.style.display === "") {
+                extraContent.style.display = "block";
+                document.getElementById("about-toggle").textContent = "Read Less";
+            }
+        });
+    </script>
 
     <section id="projects">
         <div class="container">
@@ -74,7 +111,7 @@
                         <div class="thumbnail">
                             <img src="images/grow_along_6.jpg" alt="Grow-Along Chair Concept">
                         </div>
-                        <h3>Grow-Along Chair Concept (2021)</h3>
+                        <h3>Grow-Along Chair (2021)</h3>
                     </a>
                 </div>
                 <div class="project">
@@ -130,7 +167,7 @@
                         <div class="thumbnail">
                             <img src="images/windmill_4.jpg" alt="Blender">
                         </div>
-                        <h3>Digital Modelling</h3>
+                        <h3>Digital Modeling</h3>
                     </a>
                 </div>
                 <div class="project">
@@ -150,8 +187,14 @@
             <h2>Contact Me</h2>
             <p>If you're interested in my work or would like to commission a project, feel free to get in touch!</p>
             <p>Email: <a href="mailto:vanderhorstmirthe@gmail.com">vanderhorstmirthe@gmail.com</a></p>
+            <p>
+                <a href="https://www.linkedin.com/in/mirthevanderhorst/" target="https://www.linkedin.com/in/mirthevanderhorst/">LinkedIn</a> | 
+                <a href="https://www.instagram.com/mirthevdhorst/" target="https://www.instagram.com/mirthevdhorst/">Instagram</a> |
+                <a href="https://github.com/MirthevanderHorst" target="https://github.com/MirthevanderHorst">Github</a>
+            </p>
         </div>
     </section>
+    
 
     <footer>
         <div class="container">
