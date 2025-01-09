@@ -462,7 +462,7 @@
                     // Show previous image
                     currentIndex = (currentIndex - 1 + images.length) % images.length;
                     modalImg.src = images[currentIndex].src;
-                }
+                } 
             }
         });
 
@@ -471,11 +471,13 @@
         const scrollRight = document.getElementById('scroll-right');
 
         scrollLeft.addEventListener('click', () => {
-            scrollContainer.scrollBy({ left: -500, behavior: 'smooth' });
+            const left = scrollContainer.scrollLeft === 0 ? 1000000 : -500;
+            scrollContainer.scrollBy({ left, behavior: 'smooth' });
         });
 
         scrollRight.addEventListener('click', () => {
-            scrollContainer.scrollBy({ left: 500, behavior: 'smooth' });
+            const left = scrollContainer.offsetWidth + scrollContainer.scrollLeft >= scrollContainer.scrollWidth ? -1000000 : 500;
+            scrollContainer.scrollBy({ left, behavior: 'smooth' });
         });
     </script>
 </body>

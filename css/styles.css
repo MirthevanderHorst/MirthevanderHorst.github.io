@@ -8,8 +8,13 @@ body {
     color: #333;
 }
 
+#project-details .container {
+    max-width: 80ch;
+}
+
 .container {
     width: 80%;
+    
     margin: 0 auto;
     padding: 20px;
 }
@@ -30,7 +35,7 @@ a {
 
 /* Header */
 header {
-    background-image: url('../images/background_2.jpg'); /* Replace with the path to your image */
+    background-image: url('../images/background_2.jpg');
     background-size: cover; /* Ensures the image covers the entire header */
     background-position: center 38%; /* Keeps the image centered */
     color: #fff;
@@ -101,33 +106,34 @@ nav ul li a:hover {
 
 
 
-/* About Me Section */
-#about {
-    background-color: #fff;
-    padding: 40px 0;
-    position: relative;
-    text-align: justify;
-}
+    /* About Me Section */
+    #about {
+        background-color: #fff;
+        padding: 40px 0;
+        position: relative;
+        text-align: justify;
+    }
 
-#about h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    margin-top: 0;
-}
+    #about h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
 
-.about-content {
-    position: relative;
-}
+    .about-content {
+        position: relative;
+    }
 
-.about-text {
-    margin: 0; /* Remove default margin */
-    line-height: 1.6; /* Improve readability */
-}
+    .about-text {
+        margin: 0; /* Remove default margin */
+        line-height: 1.6; /* Improve readability */
+        max-width: 80ch;
+    }
 
 /* Float image to the right with proper wrapping behavior */
 .about-image {
     float: right; /* Float the image to the right */
-    margin: 0 0 30px 50px; /* Space below and to the left of the image */
+    margin: 0 0 1em 2em; /* Space below and to the left of the image */
     shape-outside: none; /* Ensure simple wrapping */
 }
 
@@ -135,6 +141,7 @@ nav ul li a:hover {
 @media (max-width: 650px) {
     .about-text {
         clear: both; /* Ensure text starts below the floated image */
+        max-width: 80%;
     }
     
     .about {
@@ -146,21 +153,27 @@ nav ul li a:hover {
 
     .about-image {
         display: block; /* Make the image a block element */
-        width: 80%; /* Set the image width to 80% */
-        margin: 0 auto 20px auto; /* Center the image horizontally and add bottom margin */
-        max-width: 100%; /* Ensure the image doesn’t exceed container width */
+        width: auto; /* Set the image width to 80% */
+        margin: auto auto 20px auto; /* Center the image horizontally and add bottom margin */
+        max-width: 80%; /* Ensure the image doesn’t exceed container width */
         height: auto; /* Maintain aspect ratio */
     }
 }
 
-.about-image img {
-    width: 260px; /* Fixed size for the image */
-    height: 260px;
-    border-radius: 30%; /* Optional: Circular style */
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
-    object-position:center;
-}
+    .about-image img {
+        width: 350px; /* Fixed size for the image */
+        height: auto;
+        border-radius: 10%; /* Optional: Circular style */
+        object-fit: cover;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
+        object-position:center;
+    }
+
+    /* Prevent Image from enlarging on hover */
+    .about-image img:hover {
+        transform: none !important; /* Force removal of any scaling or transformation */
+        transition: none !important; /* Ensure no transition effect occurs */
+    }
 
 /* Modal Styles for Enlarged Image */
 .modal {
@@ -196,6 +209,7 @@ nav ul li a:hover {
 /* Projects Section */
 #projects {
     background-color: #fff;
+    padding: 40px 0;
 }
 
 #projects h2 {
