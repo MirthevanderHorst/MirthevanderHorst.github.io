@@ -289,6 +289,13 @@ nav ul li a:hover {
     font-size: 16px;
 }
 
+/* Contact Section */
+#contact {
+    background-color: #f9f9f9; /* Light gray to reduce stark whiteness */
+    padding: 0%; /* Add some padding for spacing */
+    text-align: left; /* Center align content */
+}
+
 /* Contact Links */
 #contact a {
     color: #1a73e8;
