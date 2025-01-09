@@ -29,17 +29,28 @@
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
+            
+            <!-- About Content Section -->
             <div class="about-content">
-                <div class="about-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat . Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-                </div>
+                <!-- Image Section -->
                 <div class="about-image">
                     <img src="images/self_portrait_5.jpg" alt="Self Portrait" id="about-image">
                 </div>
+    
+                <!-- Text Section -->
+                <div class="about-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat . Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat . Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat . Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+            <!-- Additional About Text -->
+            <div class="about-extra">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
         </div>
     </section>
 
@@ -146,15 +157,65 @@
         order: 2; /* Ensure button is on the right */
     }
 
-        /* About Me Section - Image Styles */
+        /* About Me Section */
+    #about {
+        background-color: #fff;
+        padding: 40px 0;
+        position: relative;
+        text-align: justify;
+    }
+
+    #about h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+
+    .about-content {
+        position: relative;
+    }
+
+    .about-text {
+        margin: 0; /* Remove default margin */
+        line-height: 1.6; /* Improve readability */
+    }
+
+/* Float image to the right with proper wrapping behavior */
+.about-image {
+    float: right; /* Float the image to the right */
+    margin: 0 0 30px 50px; /* Space below and to the left of the image */
+    shape-outside: none; /* Ensure simple wrapping */
+}
+
+/* Apply 'clear: both;' when the screen width is smaller than 500px */
+@media (max-width: 650px) {
+    .about-text {
+        clear: both; /* Ensure text starts below the floated image */
+    }
+    
+    .about {
+        display: flex; /* Make the container a flex container */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center the items horizontally */
+        justify-content: center; /* Center the items vertically if needed */
+    }
+
+    .about-image {
+        display: block; /* Make the image a block element */
+        width: 80%; /* Set the image width to 80% */
+        margin: 0 auto 20px auto; /* Center the image horizontally and add bottom margin */
+        max-width: 100%; /* Ensure the image doesn’t exceed container width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
     .about-image img {
-        width: 240px; /* Fixed size for the circular container */
-        height: 240px; /* Same as width for a perfect circle */
-        border-radius: 30%; /* Makes image circular */
-        object-fit: cover; /* Ensures image covers the circle */
-        object-position: center 60%; /* Focus on the top of the image */
+        width: 260px; /* Fixed size for the image */
+        height: 260px;
+        border-radius: 30%; /* Optional: Circular style */
+        object-fit: cover;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
-        transition: none; /* Ensure no transition is applied */
+        object-position:center;
     }
 
     /* Prevent Image from enlarging on hover */
@@ -163,34 +224,33 @@
         transition: none !important; /* Ensure no transition effect occurs */
     }
 
-    /* Modal Styles */
+    /* Modal Styles for Enlarged Image */
     .modal {
-        display: none; 
+        display: none;
         position: fixed;
-        z-index: 999; /* Higher z-index to make sure modal overlays */
+        z-index: 2000;
         left: 0;
         top: 0;
-        width: 100%; 
-        height: 100%; 
-        background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
-        justify-content: center; 
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
         align-items: center;
     }
 
-    .modal-content {
-        max-width: 80%; 
-        max-height: 80%;
-        display: block; 
-        margin: auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    .modal img {
+        max-width: 90%;
+        max-height: 90%;
+        margin: 0 auto;
+        object-fit: contain;
     }
 
-    .close {
+    .modal .close {
         position: absolute;
-        top: 20px;
-        right: 35px;
+        top: 10px;
+        right: 20px;
         color: #fff;
-        font-size: 40px;
+        font-size: 30px;
         font-weight: bold;
         cursor: pointer;
     }
@@ -326,8 +386,7 @@
             </div>
         </div>
     </section>
-    
-    <!-- Modal for enlarging image -->
+
     <div id="image-modal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modal-image">
@@ -371,11 +430,11 @@
         const scrollRight = document.getElementById('scroll-right');
 
         scrollLeft.addEventListener('click', () => {
-            scrollContainer.scrollBy({ left: -200, behavior: 'smooth' });
+            scrollContainer.scrollBy({ left: -500, behavior: 'smooth' });
         });
 
         scrollRight.addEventListener('click', () => {
-            scrollContainer.scrollBy({ left: 200, behavior: 'smooth' });
+            scrollContainer.scrollBy({ left: 500, behavior: 'smooth' });
         });
     </script>
 </body>

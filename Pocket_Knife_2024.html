@@ -293,7 +293,7 @@
         
             <section id="projects">
                 <div class="container">
-                    <h2>See Other Projects</h2>
+                    <h2>Check Out More</h2>
                     <div class="project-scroll-container-wrapper">
                         <button id="scroll-left" class="scroll-button scroll-button-left">‹</button>
                         <div class="project-scroll-container" id="scroll-container">
@@ -467,17 +467,11 @@
         const scrollRight = document.getElementById('scroll-right');
 
         scrollLeft.addEventListener('click', () => {
-            scrollContainer.scrollBy({
-                left: -scrollContainer.offsetWidth / 2,
-                behavior: 'smooth',
-            });
+            scrollContainer.scrollBy({ left: -500, behavior: 'smooth' });
         });
 
         scrollRight.addEventListener('click', () => {
-            scrollContainer.scrollBy({
-                left: scrollContainer.offsetWidth / 2,
-                behavior: 'smooth',
-            });
+            scrollContainer.scrollBy({ left: 500, behavior: 'smooth' });
         });
     </script>
 </body>
