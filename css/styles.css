@@ -81,7 +81,8 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 20px; /* Adds space between the list items */
+    margin-right: 15px; /* Adds space between the list items */
+    padding-left: 15px; /* Adds space in front of the first word */
 }
 
 nav ul li a {
