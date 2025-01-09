@@ -110,84 +110,34 @@ nav ul li a:hover {
 #about h2 {
     font-size: 28px;
     margin-bottom: 20px;
-    margin-top: 0; /* Ensure the heading has no top margin */
+    margin-top: 0;
 }
 
-/* Adjustments to About Me Content */
 .about-content {
-    padding-right: 35%; /* Adds room for the image */
-    clear: both; /* Ensures content starts after the image */
+    position: relative;
 }
 
-.about-extra {
-    display: none;
-    margin-top: 20px;
-    line-height: 1.6;
-    text-align: left;
-    padding-right: 25%; /* Adds room for the image */
-    padding-bottom: 20px;
+.about-text {
+    margin: 0; /* Remove default margin */
+    line-height: 1.6; /* Improve readability */
 }
 
-.about-extra p {
-    font-size: 16px;
-    margin-top: 15px;
-}
-
-/* Image Alignment (Align to top-right corner of the title) */
+/* Float image to the right with proper wrapping behavior */
 .about-image {
-    float: right; /* Float image to the right */
-    margin-left: 20px; /* Adds space between the image and text */
-    position: absolute; /* Position absolutely within the section */
-    top: 80px; /* Align the top of the image with the top of the h2 title */
-    right: 10%; /* Align the image to the right edge of the section */
+    float: right; /* Float the image to the right */
+    margin: 0 0 20px 20px; /* Space below and to the left of the image */
+    shape-outside: none; /* Ensure simple wrapping */
+    display: inline-block; /* Prevent other elements above */
 }
 
-/* About Me Section - Image Styles */
 .about-image img {
-    width: 240px; /* Fixed size for the circular container */
-    height: 240px; /* Same as width for a perfect circle */
-    border-radius: 30%; /* Makes image circular */
-    object-fit: cover; /* Ensures image covers the circle */
-    object-position: center 60%; /* Focus on the top of the image */
+    width: 240px; /* Fixed size for the image */
+    height: 240px;
+    border-radius: 30%; /* Optional: Circular style */
+    object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
-    transition: none; /* Ensure no transition is applied */
-}
-
-/* Prevent Image from enlarging on hover */
-.about-image img:hover {
-    transform: none !important; /* Force removal of any scaling or transformation */
-    transition: none !important; /* Ensure no transition effect occurs */
-}
-
-/* Button Styling */
-#about-toggle {
-    background-color: #436850;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
-}
-
-#about-toggle:hover {
-    background-color: #627254;
-    transform: scale(1.1); /* Slight zoom effect on hover */
-}
-
-/* Ensure Button Appears Below the Text in Expanded Section */
-.about-extra #about-toggle {
-    margin-top: 20px;
-    display: block;
-    text-align: center;
-}
-
-/* Hide "Read Less" Button Initially */
-#about-toggle-read-less {
-    display: none;
+    object-position:center.!
+```tofix
 }
 
 /* Modal Styles for Enlarged Image */
