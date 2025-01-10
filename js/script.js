@@ -1,5 +1,6 @@
 // Function to open the modal with the clicked image
 const images = document.querySelectorAll('.image-gallery img');
+const image = document.getElementById('about-image');
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
 let currentIndex = 0; // Variable to track the currently displayed image
@@ -11,6 +12,13 @@ images.forEach((img, index) => {
         modalImg.src = this.src;
         currentIndex = index; // Set current index when image is clicked
     });
+});
+
+// Open the modal when the image is clicked
+image.addEventListener('click', function (e) {
+    e.preventDefault(); // Prevents default behavior
+    modal.style.display = 'flex';
+    modalImg.src = this.src; // Set the modal image source to the clicked image
 });
 
 // Close the modal

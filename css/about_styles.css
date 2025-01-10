@@ -133,7 +133,7 @@ nav ul li a:hover {
 .about-image img {
     width: 300px; /* Fixed size for the image */
     height: 300px;
-    border-radius: 20%; /* Optional: Circular style */
+    border-radius: 15%; /* Optional: Circular style */
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
     object-position:center;
