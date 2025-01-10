@@ -1,0 +1,324 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #fff;
+}
+
+h2, h3 {
+    color: #12372A;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#header {
+    background-image: url('../images/background_2.jpg');
+    background-size: cover; /* Ensures the image covers the entire header */
+    background-position: center 38%; /* Keeps the image centered */
+    background-color: #fff;
+    padding: 10px 0; /* Decreased top and bottom padding */
+    text-align: center;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+#header h1 {
+    font-size: 2rem; /* Smaller font size for the header */
+    margin: 0;
+}
+
+#header p {
+    font-size: 1rem; /* Adjust the paragraph text size */
+    margin: 5px 0;
+}
+
+/* Header as a button */
+#header h1 a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+#header h1 a:hover {
+    color: #12372A; /* Lighter green color on hover */
+}
+
+/* Navigation bar */
+nav {
+    background-color: #12372A; /* Dark gray background */
+    height: 50px; /* Set the height of the navigation bar */
+    display: flex; /* Use Flexbox to align the items */
+    justify-content: center; /* Centers the links horizontally */
+    align-items: center; /* Centers the links vertically */
+    position: sticky; /* Makes the navigation bar stick to the top */
+    top: 0; /* Ensures it's at the top of the screen */
+    z-index: 1000; /* Keeps the nav on top of other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Adds a soft shadow under the nav */
+}
+
+/* Navigation links styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use Flexbox on the list */
+}
+
+nav ul li {
+    margin-right: 15px; /* Adds space between the list items */
+    padding-left: 15px; /* Adds space in front of the first word */
+}
+
+nav ul li a {
+    color: #fff; /* Make the links white to stand out on the dark background */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 15px; /* Add padding to the links for better spacing */
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+    display: inline-block; /* Make the link an inline block for scaling */
+}
+
+/* Enlarge the text when hovering over the nav links */
+nav ul li a:hover {
+    transform: scale(1.3); /* Enlarge the text by 10% */
+}
+
+
+/* About Me Section */
+#about {
+    background-color: #fff;
+    padding: 40px 0;
+    position: center;
+    text-align: justify;
+    max-width: 80ch;
+}
+
+#about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.about-text {
+    margin: 0; /* Remove default margin */
+    line-height: 1.6; /* Improve readability */
+    position: center;
+}
+
+
+/* Float image to the right with proper wrapping behavior */
+.about-image {
+    float: right; /* Float the image to the right */
+    margin: 0 0 1em 2em; /* Space below and to the left of the image */
+    shape-outside: none; /* Ensure simple wrapping */
+}
+
+.about-image img {
+    width: 300px; /* Fixed size for the image */
+    height: 300px;
+    border-radius: 20%; /* Optional: Circular style */
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    object-position:center;
+}
+
+/* Prevent Image from enlarging on hover */
+.about-image img:hover {
+    transform: none !important; /* Force removal of any scaling or transformation */
+    transition: none !important; /* Ensure no transition effect occurs */
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000; /* Higher z-index to ensure it goes over the nav bar */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Apply 'clear: both;' when the screen width is smaller than 500px */
+@media (max-width: 650px) {
+    .about-text {
+        clear: both; /* Ensure text starts below the floated image */
+        max-width: 80%;
+    }
+    
+    .about {
+        display: flex; /* Make the container a flex container */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center the items horizontally */
+        justify-content: center; /* Center the items vertically if needed */
+    }
+    
+    .about-image {
+        display: block; /* Make the image a block element */
+        width: 80%; /* Set the image width to 80% */
+        margin: 0 auto 20px auto; /* Center the image horizontally and add bottom margin */
+        max-width: 100%; /* Ensure the image doesn’t exceed container width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    }
+
+/* Projects Section */
+#projects {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+#projects h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.project-scroll-container-wrapper {
+    display: flex;
+    align-items: center; /* Vertically align buttons with the project boxes */
+    justify-content: center; /* Center the content horizontally */
+    gap: 10px; /* Space between buttons and project-scroll-container */
+    padding: 10px 0;
+    position: relative; /* Ensures proper positioning */
+}
+
+.project-scroll-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping */
+    padding: 10px 20px;
+    justify-content: flex-start;
+    scrollbar-width: none; /* Firefox: Hide scrollbar */
+}
+
+.project-scroll-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers */
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    height: 240px;
+    width: auto;
+    flex: 0 0 auto;
+}
+
+.project:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.thumbnail img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project h3 {
+    font-size: 18px;
+    margin: 10px 0 0;
+    font-weight: bold;
+}
+
+/* Scroll buttons styling */
+.scroll-button {
+    background: none;
+    color: #12372A;
+    font-size: 25px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.scroll-button:hover {
+    background-color: none;
+}
+
+.scroll-button-left {
+    order: 0; /* Ensure button is on the left */
+}
+
+.scroll-button-right {
+    order: 2; /* Ensure button is on the right */
+}
+
+.image-gallery {
+    width: 80%;
+    margin: 2em auto;
+}
+
+/* Footer */
+footer {
+    background-color: #12372A;
+    height: 10%; /* Set the height of the navigation bar */
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Enable smooth scrolling across the page */
+html {
+    scroll-behavior: smooth;
+}

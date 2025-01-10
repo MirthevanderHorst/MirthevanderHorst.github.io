@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio Mirthe van der Horst</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>MvdH Portfolio - About Me</title>
+    <link rel="stylesheet" href="css/about_styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
@@ -16,36 +16,7 @@
             <h1><a href="index.html#home">Mirthe van der Horst</a></h1>
         </div>
     </header>
-<style>
-/* Specific header styles for the Pocket Knife project page */
-#header {
-    background-color: #fff;
-    padding: 10px 0; /* Decreased top and bottom padding */
-    text-align: center;
-}
 
-#header h1 {
-    font-size: 2rem; /* Smaller font size for the header */
-    margin: 0;
-}
-
-#header p {
-    font-size: 1rem; /* Adjust the paragraph text size */
-    margin: 5px 0;
-}
-/* Header as a button */
-#header h1 a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 2rem;
-    transition: color 0.3s ease;
-}
-
-#header h1 a:hover {
-    color: #12372A; /* Lighter green color on hover */
-}
-</style>
     <nav id="home">
         <ul>
             <li><a href="index.html#home">Home</a></li>
@@ -57,8 +28,6 @@
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            
-            <!-- About Content Section -->
             <div class="about-content">
                 <!-- Image Section -->
                 <div class="about-image">
@@ -76,227 +45,10 @@
                 </p>    
                 </div>
             </div>
-    
-            <!-- Additional About Text -->
-            <div class="about-extra">
-                </div>
         </div>
     </section>
 
-    <style>
-    /* Projects Section */
-    #projects {
-        background-color: #fff;
-        padding: 40px 0;
-    }
-
-    #about .container {
-        max-width: 80ch;
-    }
-
-    #projects h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .project-scroll-container-wrapper {
-        display: flex;
-        align-items: center; /* Vertically align buttons with the project boxes */
-        justify-content: center; /* Center the content horizontally */
-        gap: 10px; /* Space between buttons and project-scroll-container */
-        padding: 10px 0;
-        position: relative; /* Ensures proper positioning */
-    }
-
-    .project-scroll-container {
-        display: flex;
-        gap: 20px;
-        overflow-x: auto; /* Enables horizontal scrolling */
-        white-space: nowrap; /* Prevents wrapping */
-        padding: 10px 20px;
-        justify-content: flex-start;
-        scrollbar-width: none; /* Firefox: Hide scrollbar */
-    }
-
-    .project-scroll-container::-webkit-scrollbar {
-        display: none; /* Hide scrollbar for Webkit browsers */
-    }
-
-    .project {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        background-color: #fff;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        overflow: hidden;
-        height: 240px;
-        width: auto;
-        flex: 0 0 auto;
-    }
-
-    .project:hover {
-        transform: scale(1.1);
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .thumbnail {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-        width: auto;
-        overflow: hidden;
-        border-radius: 8px;
-        background-color: #fff;
-    }
-
-    .thumbnail img {
-        height: 100%;
-        width: auto;
-        object-fit: cover;
-        border-radius: 8px;
-    }
-
-    .project h3 {
-        font-size: 18px;
-        margin: 10px 0 0;
-        font-weight: bold;
-    }
-
-    /* Scroll buttons styling */
-    .scroll-button {
-        background: none;
-        color: #12372A;
-        font-size: 25px;
-        padding: 0;
-        border: none;
-        cursor: pointer;
-    }
-
-    .scroll-button:hover {
-        background-color: none;
-    }
-
-    .scroll-button-left {
-        order: 0; /* Ensure button is on the left */
-    }
-
-    .scroll-button-right {
-        order: 2; /* Ensure button is on the right */
-    }
-
-        /* About Me Section */
-    #about {
-        background-color: #fff;
-        padding: 40px 0;
-        position: relative;
-        text-align: justify;
-    }
-
-    #about h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        margin-top: 0;
-    }
-
-    .about-content {
-        position: relative;
-    }
-
-    .about-text {
-        margin: 0; /* Remove default margin */
-        line-height: 1.6; /* Improve readability */
-    }
-
-/* Float image to the right with proper wrapping behavior */
-.about-image {
-    float: right; /* Float the image to the right */
-    margin: 0 0 1em 2em; /* Space below and to the left of the image */
-    shape-outside: none; /* Ensure simple wrapping */
-}
-
-/* Apply 'clear: both;' when the screen width is smaller than 500px */
-@media (max-width: 650px) {
-    .about-text {
-        clear: both; /* Ensure text starts below the floated image */
-        max-width: 80%;
-    }
-    
-    .about {
-        display: flex; /* Make the container a flex container */
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center the items horizontally */
-        justify-content: center; /* Center the items vertically if needed */
-    }
-
-    .about-image {
-        display: block; /* Make the image a block element */
-        width: 80%; /* Set the image width to 80% */
-        margin: 0 auto 20px auto; /* Center the image horizontally and add bottom margin */
-        max-width: 100%; /* Ensure the image doesn’t exceed container width */
-        height: auto; /* Maintain aspect ratio */
-    }
-}
-
-    .about-image img {
-        width: 300px; /* Fixed size for the image */
-        height: 300px;
-        border-radius: 20%; /* Optional: Circular style */
-        object-fit: cover;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
-        object-position:center;
-    }
-
-    /* Prevent Image from enlarging on hover */
-    .about-image img:hover {
-        transform: none !important; /* Force removal of any scaling or transformation */
-        transition: none !important; /* Ensure no transition effect occurs */
-    }
-
-    /* Modal Styles for Enlarged Image */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 2000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        justify-content: center;
-        align-items: center;
-    }
-
-    .modal img {
-        max-width: 90%;
-        max-height: 90%;
-        margin: 0 auto;
-        object-fit: contain;
-    }
-
-    .modal .close {
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        color: #fff;
-        font-size: 30px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    /* Navbar to ensure it stays visible behind the modal */
-    nav {
-        position: relative;
-        z-index: 1; /* Ensure navbar stays underneath the modal */
-    }
-
-    </style>
-
+    <!--other projects section-->
     <section id="projects">
         <div class="container">
             <h2>Check out some of my Projects</h2>
@@ -421,55 +173,19 @@
         </div>
     </section>
 
-    <div id="image-modal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modal-image">
-        <div id="caption"></div>
+    <!-- Modal for Enlarged Image -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" src="">
     </div>
 
+    <!--footer-->
     <footer>
         <div class="container">
             <p>&copy; 2025 Mirthe van der Horst. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Image Modal for Enlarged Image
-        const image = document.getElementById('about-image');
-        const modal = document.getElementById('image-modal');
-        const modalImg = document.getElementById('modal-image');
-        const closeModalBtn = document.querySelector('.close'); // Make sure .close is the button element
-    
-        // Open the modal when the image is clicked
-        image.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevents default behavior
-            modal.style.display = 'flex';
-            modalImg.src = this.src; // Set the modal image source to the clicked image
-        });
-    
-        // Close the modal when the close button (X) is clicked
-        closeModalBtn.addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-    
-        // Close modal if the user clicks outside of the modal
-        modal.addEventListener('click', function (e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });    
-        
-        const scrollContainer = document.getElementById('scroll-container');
-        const scrollLeft = document.getElementById('scroll-left');
-        const scrollRight = document.getElementById('scroll-right');
-
-        scrollLeft.addEventListener('click', () => {
-            scrollContainer.scrollBy({ left: -500, behavior: 'smooth' });
-        });
-
-        scrollRight.addEventListener('click', () => {
-            scrollContainer.scrollBy({ left: 500, behavior: 'smooth' });
-        });
-    </script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

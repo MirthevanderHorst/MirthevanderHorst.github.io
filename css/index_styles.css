@@ -1,0 +1,305 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #fff;
+}
+
+h2, h3 {
+    color: #12372A;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* Header */
+header {
+    background-image: url('../images/background_2.jpg');
+    background-size: cover; /* Ensures the image covers the entire header */
+    background-position: center 38%; /* Keeps the image centered */
+    color: #fff;
+    padding: 16%;
+    text-align: center;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+/* Make sure both h1 and p start with normal size */
+header h1,
+header p {
+    font-size: 50px;
+    margin: 0;
+    transition: transform 0.4s ease; /* Smooth transition for the hover effect */
+}
+
+header p {
+    font-size: 25px;
+}
+
+/* Ensure both text elements grow when hovering over either of them */
+header h1:hover, header p:hover,
+header h1:hover ~ p, header p:hover ~ h1 {
+    transform: scale(1.05); /* Enlarge both */
+    color: #12372A; /* Lighter green color on hover */
+}
+
+
+/* Navigation bar */
+nav {
+    background-color: #12372A; /* Dark gray background */
+    height: 50px; /* Set the height of the navigation bar */
+    display: flex; /* Use Flexbox to align the items */
+    justify-content: center; /* Centers the links horizontally */
+    align-items: center; /* Centers the links vertically */
+    position: sticky; /* Makes the navigation bar stick to the top */
+    top: 0; /* Ensures it's at the top of the screen */
+    z-index: 1000; /* Keeps the nav on top of other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Adds a soft shadow under the nav */
+}
+
+/* Navigation links styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use Flexbox on the list */
+}
+
+nav ul li {
+    margin-right: 15px; /* Adds space between the list items */
+    padding-left: 15px; /* Adds space in front of the first word */
+}
+
+nav ul li a {
+    color: #fff; /* Make the links white to stand out on the dark background */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 15px; /* Add padding to the links for better spacing */
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+    display: inline-block; /* Make the link an inline block for scaling */
+}
+
+/* Enlarge the text when hovering over the nav links */
+nav ul li a:hover {
+    transform: scale(1.3); /* Enlarge the text by 10% */
+}
+
+
+/* About Me Section */
+#about {
+    background-color: #fff;
+    padding: 40px 0;
+    position: relative;
+    text-align: justify;
+}
+
+#about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.about-content {
+    position: relative;
+}
+
+.about-text {
+    margin: 0; /* Remove default margin */
+    line-height: 1.6; /* Improve readability */
+    max-width: 80ch;
+}
+
+/* Float image to the right with proper wrapping behavior */
+.about-image {
+    float: right; /* Float the image to the right */
+    margin: 0 0 1em 2em; /* Space below and to the left of the image */
+    shape-outside: none; /* Ensure simple wrapping */
+}
+
+.about-image img {
+    width: 350px; /* Fixed size for the image */
+    height: auto;
+    border-radius: 10%; /* Optional: Circular style */
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    object-position:center;
+}
+
+/* Prevent Image from enlarging on hover */
+.about-image img:hover {
+    transform: none !important; /* Force removal of any scaling or transformation */
+    transition: none !important; /* Ensure no transition effect occurs */
+}
+
+/* Modal Styles for Enlarged Image */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Apply 'clear: both;' when the screen width is smaller than 500px */
+@media (max-width: 650px) {
+    .about-text {
+        clear: both; /* Ensure text starts below the floated image */
+        max-width: 80%;
+    }
+    
+    .about {
+        display: flex; /* Make the container a flex container */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center the items horizontally */
+        justify-content: center; /* Center the items vertically if needed */
+    }
+
+    .about-image {
+        display: block; /* Make the image a block element */
+        width: auto; /* Set the image width to 80% */
+        margin: auto auto 20px auto; /* Center the image horizontally and add bottom margin */
+        max-width: 80%; /* Ensure the image doesn’t exceed container width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Projects Section */
+#projects {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+#projects h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transform transition */
+    overflow: hidden;
+    height: 275px;
+    width: auto;
+}
+
+.project:hover {
+    transform: scale(1.15); /* Slightly scale up the project box */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 225px;
+    width: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.thumbnail img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.project h3 {
+    font-size: 20px;
+    margin: 15px 0 0;
+    font-weight: bold;
+}
+
+.project p {
+    font-size: 16px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f9f9f9; /* Light gray to reduce stark whiteness */
+    padding: 0%; /* Add some padding for spacing */
+    text-align: left; /* Center align content */
+}
+
+/* Contact Links */
+#contact a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #12372A;
+    height: 10%; /* Set the height of the navigation bar */
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Enable smooth scrolling across the page */
+html {
+    scroll-behavior: smooth;
+}

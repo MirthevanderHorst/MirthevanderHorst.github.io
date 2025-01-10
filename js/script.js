@@ -36,7 +36,9 @@ document.addEventListener('keydown', function (event) {
             // Show previous image
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             modalImg.src = images[currentIndex].src;
-        } 
+        } else if (event.key === 'Escape') {
+            closeModal();
+        }
     }
 });
 
