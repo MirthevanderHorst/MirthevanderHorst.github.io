@@ -39,12 +39,16 @@ header {
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
+header .container {
+    width: max-content;
+}
+
 /* Make sure both h1 and p start with normal size */
 header h1,
 header p {
     font-size: 50px;
     margin: 0;
-    transition: transform 0.4s ease; /* Smooth transition for the hover effect */
+    transition: transform 0.4s ease, color 0.4s ease; /* Smooth transition for the hover effect */
 }
 
 header p {
@@ -52,12 +56,11 @@ header p {
 }
 
 /* Ensure both text elements grow when hovering over either of them */
-header h1:hover, header p:hover,
-header h1:hover ~ p, header p:hover ~ h1 {
+header .container:hover h1, header .container:hover p
+/* header h1:hover ~ p, header p:hover ~ h1*/ { 
     transform: scale(1.05); /* Enlarge both */
-    color: #12372A; /* Lighter green color on hover */
+    color: #fff; /* Lighter green color on hover */
 }
-
 
 /* Navigation bar */
 nav {
