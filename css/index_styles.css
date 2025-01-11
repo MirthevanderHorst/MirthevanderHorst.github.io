@@ -348,5 +348,18 @@ html {
     #projects {
         background-color: #fff;
         padding: 0px 0;
+        scroll-margin-top: 40px;
     }
+
+    #projects h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    #contact {
+        scroll-margin-top: 40px;
+    }
+
+    
 }
