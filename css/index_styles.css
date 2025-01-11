@@ -46,13 +46,13 @@ header .container {
 /* Make sure both h1 and p start with normal size */
 header h1,
 header p {
-    font-size: 50px;
+    font-size: 3vw;
     margin: 0;
     transition: transform 0.4s ease, color 0.4s ease; /* Smooth transition for the hover effect */
 }
 
 header p {
-    font-size: 25px;
+    font-size: 2vw;
 }
 
 /* Ensure both text elements grow when hovering over either of them */
@@ -180,29 +180,6 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-/* Apply 'clear: both;' when the screen width is smaller than 500px */
-@media (max-width: 650px) {
-    .about-text {
-        clear: both; /* Ensure text starts below the floated image */
-        max-width: 80%;
-    }
-    
-    .about {
-        display: flex; /* Make the container a flex container */
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center the items horizontally */
-        justify-content: center; /* Center the items vertically if needed */
-    }
-
-    .about-image {
-        display: block; /* Make the image a block element */
-        width: auto; /* Set the image width to 80% */
-        margin: auto auto 20px auto; /* Center the image horizontally and add bottom margin */
-        max-width: 80%; /* Ensure the image doesn’t exceed container width */
-        height: auto; /* Maintain aspect ratio */
-    }
-}
-
 /* Projects Section */
 #projects {
     background-color: #fff;
@@ -305,4 +282,59 @@ footer p {
 /* Enable smooth scrolling across the page */
 html {
     scroll-behavior: smooth;
+}
+
+
+@media (max-width: 750px) {
+    /* Center the .container */
+    .container {
+        width: 80%; /* Use full width */
+        margin: 0 auto; /* Horizontally center the container */
+        padding: 20px; /* Ensure some padding around the content */
+    }
+
+    /* Center header text */
+    header h1, header p {
+        font-size: 6vw;
+        margin: 0;
+        text-align: center; /* Ensure the header text is centered */
+    }
+
+    header p {
+        font-size: 4vw;
+    }
+
+    #about {
+        background-color: #fff;
+        padding: 2vw 0;
+        position: relative;
+        text-align: justify;
+    }
+    
+    #about h2 {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically (optional) */
+        text-align: center; /* Ensure text within the container is centered */
+        font-size: 28px;
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+
+    /* Center the image with proper wrapping behavior */
+    .about-image {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically (optional) */
+        text-align: center; /* Ensure text within the container is centered */
+        float: none;
+        margin: 0 0 6vw 0;
+    }
+
+    .about-image img {
+        width: 75vw; /* Fixed size for the image */
+        height: auto;
+        object-fit: cover; /* Ensure the image covers the space without distortion */
+    }
+
 }

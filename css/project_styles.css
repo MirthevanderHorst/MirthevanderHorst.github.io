@@ -100,6 +100,8 @@ nav ul li a:hover {
     transform: scale(1.3); /* Enlarge the text by 10% */
 }
 
+/* specific project layout */
+
 /* Grid for the image gallery */
 .image-gallery {
     display: grid;
@@ -141,6 +143,8 @@ text-align: justify;
     line-height: 1.6;
     margin: 15px 0;
 }
+
+/* end specific project layout */
 
 /* Modal Styles */
 .modal {
