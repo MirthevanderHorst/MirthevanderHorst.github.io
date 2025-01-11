@@ -107,6 +107,9 @@ nav ul li a:hover {
     padding: 40px 0;
     position: center;
     text-align: justify;
+}
+
+#about .container {
     max-width: 80ch;
 }
 
