@@ -310,9 +310,15 @@ html {
         position: relative;
         text-align: justify;
     }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+
+    }
+    
     
     #about h2 {
-        display: flex;
         justify-content: center; /* Center horizontally */
         align-items: center; /* Center vertically (optional) */
         text-align: center; /* Ensure text within the container is centered */
@@ -321,20 +327,26 @@ html {
         margin-top: 0;
     }
 
+
     /* Center the image with proper wrapping behavior */
     .about-image {
-        display: flex;
+        order: 3;
         justify-content: center; /* Center horizontally */
         align-items: center; /* Center vertically (optional) */
         text-align: center; /* Ensure text within the container is centered */
         float: none;
-        margin: 0 0 6vw 0;
+        margin: 2em 0 0 0;
     }
 
     .about-image img {
-        width: 75vw; /* Fixed size for the image */
-        height: auto;
+        width: 50vw; /* Fixed size for the image */
+        height: 50vw;
         object-fit: cover; /* Ensure the image covers the space without distortion */
+        border-radius: 50%; /* Optional: Circular style */
     }
-
+    /* Projects Section */
+    #projects {
+        background-color: #fff;
+        padding: 0px 0;
+    }
 }
