@@ -103,23 +103,24 @@ nav ul li a:hover {
 /* specific project layout */
 
 /* Grid for the image gallery */
-.image-gallery {
+.image-gallery, .image-gallery video  {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
 
-.image-gallery img {
+.image-gallery img, .image-gallery video {
     width: 100%;
     height: auto;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
-}
+    transition: transform 0.3s ease;
+} 
+
 
 /* Enlarge images on hover */
-.image-gallery img:hover {
+.image-gallery img:hover, .image-gallery video:hover {
     transform: scale(1.05); /* Slightly enlarge the image */
 }
 
