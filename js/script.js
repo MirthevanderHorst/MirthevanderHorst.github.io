@@ -40,6 +40,22 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
+// Add functionality to click on the enlarged image to go to the next/previous image
+modalImg.addEventListener('click', function (event) {
+    const clickX = event.offsetX; // Get the X coordinate of the click inside the image
+    const imageWidth = modalImg.offsetWidth; // Get the width of the image
+
+    // If clicked on the left half, go to the previous image
+    if (clickX < imageWidth / 2) {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+    } else {
+        // If clicked on the right half, go to the next image
+        currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    modalImg.src = images[currentIndex].src; // Change the modal image source
+});
+
 const scrollContainer = document.getElementById('scroll-container');
 const scrollLeft = document.getElementById('scroll-left');
 const scrollRight = document.getElementById('scroll-right');

@@ -203,6 +203,7 @@ nav ul li a:hover {
     display: flex;
     gap: 20px;
     overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-y: hidden;
     white-space: nowrap; /* Prevents wrapping */
     padding: 10px 20px;
     justify-content: flex-start;
