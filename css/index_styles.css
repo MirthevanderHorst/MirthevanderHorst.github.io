@@ -28,78 +28,73 @@ a {
 }
 
 
-/* Header */
+/* Big header */
 header {
     background-image: url('../images/background_2.jpg');
-    background-size: cover; /* Ensures the image covers the entire header */
-    background-position: center 38%; /* Keeps the image centered */
+    background-size: cover;
+    background-position: center 38%;
     color: #fff;
     padding: 16%;
     text-align: center;
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-repeat: no-repeat;
 }
 
 header .container {
     width: max-content;
 }
 
-/* Make sure both h1 and p start with normal size */
 header h1,
 header p {
     font-size: 3vw;
     margin: 0;
-    transition: transform 0.4s ease, color 0.4s ease; /* Smooth transition for the hover effect */
+    transition: transform 0.4s ease, color 0.4s ease;
 }
 
 header p {
     font-size: 2vw;
 }
 
-/* Ensure both text elements grow when hovering over either of them */
-header .container:hover h1, header .container:hover p
-/* header h1:hover ~ p, header p:hover ~ h1*/ { 
-    transform: scale(1.05); /* Enlarge both */
-    color: #fff; /* Lighter green color on hover */
+header .container:hover h1, header .container:hover p { 
+    transform: scale(1.05);
+    color: #fff;
 }
 
 /* Navigation bar */
 nav {
-    background-color: #12372A; /* Dark gray background */
-    height: 50px; /* Set the height of the navigation bar */
-    display: flex; /* Use Flexbox to align the items */
-    justify-content: center; /* Centers the links horizontally */
-    align-items: center; /* Centers the links vertically */
-    position: sticky; /* Makes the navigation bar stick to the top */
-    top: 0; /* Ensures it's at the top of the screen */
-    z-index: 1000; /* Keeps the nav on top of other elements */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Adds a soft shadow under the nav */
+    background-color: #12372A;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* Navigation links styles */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Use Flexbox on the list */
+    display: flex;
 }
 
 nav ul li {
-    margin-right: 15px; /* Adds space between the list items */
-    padding-left: 15px; /* Adds space in front of the first word */
+    margin-right: 15px;
+    padding-left: 15px;
 }
 
 nav ul li a {
-    color: #fff; /* Make the links white to stand out on the dark background */
+    color: #fff;
     font-weight: bold;
     font-size: 16px;
-    padding: 10px 15px; /* Add padding to the links for better spacing */
-    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
-    display: inline-block; /* Make the link an inline block for scaling */
+    padding: 10px 15px;
+    transition: transform 0.3s ease;
+    display: inline-block;
 }
 
-/* Enlarge the text when hovering over the nav links */
 nav ul li a:hover {
-    transform: scale(1.3); /* Enlarge the text by 10% */
+    transform: scale(1.3);
 }
 
 
@@ -122,34 +117,32 @@ nav ul li a:hover {
 }
 
 .about-text {
-    margin: 0; /* Remove default margin */
-    line-height: 1.6; /* Improve readability */
+    margin: 0;
+    line-height: 1.6;
     max-width: 80ch;
 }
 
-/* Float image to the right with proper wrapping behavior */
 .about-image {
-    float: right; /* Float the image to the right */
-    margin: 0 0 1em 2em; /* Space below and to the left of the image */
-    shape-outside: none; /* Ensure simple wrapping */
+    float: right;
+    margin: 0 0 1em 2em;
+    shape-outside: none;
 }
 
 .about-image img {
-    width: 350px; /* Fixed size for the image */
+    width: 350px;
     height: auto;
-    border-radius: 10%; /* Optional: Circular style */
+    border-radius: 10%;
     object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     object-position:center;
 }
 
-/* Prevent Image from enlarging on hover */
 .about-image img:hover {
-    transform: none !important; /* Force removal of any scaling or transformation */
-    transition: none !important; /* Ensure no transition effect occurs */
+    transform: none !important;
+    transition: none !important;
 }
 
-/* Modal Styles for Enlarged Image */
+/* Modal Styles for bigger Image */
 .modal {
     display: none;
     position: fixed;
@@ -209,14 +202,14 @@ nav ul li a:hover {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transform transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     height: 275px;
     width: auto;
 }
 
 .project:hover {
-    transform: scale(1.15); /* Slightly scale up the project box */
+    transform: scale(1.15);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -250,12 +243,12 @@ nav ul li a:hover {
 
 /* Contact Section */
 #contact {
-    background-color: #f9f9f9; /* Light gray to reduce stark whiteness */
-    padding: 0%; /* Add some padding for spacing */
-    text-align: left; /* Center align content */
+    background-color: #f9f9f9;
+    padding: 0%;
+    padding-left: 0px;
+    text-align: left;
 }
 
-/* Contact Links */
 #contact a {
     color: #1a73e8;
     text-decoration: none;
@@ -270,7 +263,7 @@ nav ul li a:hover {
 /* Footer */
 footer {
     background-color: #12372A;
-    height: 10%; /* Set the height of the navigation bar */
+    height: 10%;
     color: #fff;
     text-align: center;
 }
@@ -279,25 +272,22 @@ footer p {
     font-size: 14px;
 }
 
-/* Enable smooth scrolling across the page */
 html {
     scroll-behavior: smooth;
 }
 
-
+/* Styles on smaller screens */
 @media (max-width: 750px) {
-    /* Center the .container */
     .container {
-        width: 80%; /* Use full width */
-        margin: 0 auto; /* Horizontally center the container */
-        padding: 20px; /* Ensure some padding around the content */
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
     }
 
-    /* Center header text */
     header h1, header p {
         font-size: 6vw;
         margin: 0;
-        text-align: center; /* Ensure the header text is centered */
+        text-align: center;
     }
 
     header p {
@@ -319,32 +309,30 @@ html {
     
     
     #about h2 {
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically (optional) */
-        text-align: center; /* Ensure text within the container is centered */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         font-size: 28px;
         margin-bottom: 20px;
         margin-top: 0;
     }
 
-
-    /* Center the image with proper wrapping behavior */
     .about-image {
         order: 3;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically (optional) */
-        text-align: center; /* Ensure text within the container is centered */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         float: none;
         margin: 2em 0 0 0;
     }
 
     .about-image img {
-        width: 50vw; /* Fixed size for the image */
+        width: 50vw;
         height: 50vw;
-        object-fit: cover; /* Ensure the image covers the space without distortion */
-        border-radius: 50%; /* Optional: Circular style */
+        object-fit: cover;
+        border-radius: 50%;
     }
-    /* Projects Section */
+
     #projects {
         background-color: #fff;
         padding: 0px 0;
@@ -359,7 +347,5 @@ html {
 
     #contact {
         scroll-margin-top: 40px;
-    }
-
-    
+    }    
 }
