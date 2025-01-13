@@ -100,10 +100,10 @@ nav ul li a:hover {
     transform: scale(1.3); /* Enlarge the text by 10% */
 }
 
-/* specific project layout */
+/*specific project layout */
 
-/* Grid for the image gallery */
-.image-gallery, .image-gallery video  {
+/* Grid for the image gallery */ 
+/* .image-gallery, .image-gallery video  {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
@@ -116,15 +116,45 @@ nav ul li a:hover {
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s ease;
-} 
+}  */
 
+/* Flexible, Pinterest-style image gallery */
+.image-gallery, .image-gallery video {
+    column-count: 3;
+    column-gap: 20px;
+    margin-top: 20px;
+}
+
+.image-gallery img, .image-gallery video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block;
+    margin-bottom: 20px;
+}
 
 /* Enlarge images on hover */
 .image-gallery img:hover, .image-gallery video:hover {
-    transform: scale(1.05); /* Slightly enlarge the image */
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Make it responsive */
+@media (max-width: 1200px) {
+    .image-gallery, .image-gallery video {
+        column-count: 2;
+    }
+}
 
+@media (max-width: 768px) {
+    .image-gallery, .image-gallery video {
+        column-count: 1;
+    }
+}
+
+/* Specific project text */
 #project {
 text-align: justify;
 }
