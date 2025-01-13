@@ -71,3 +71,35 @@ scrollRight.addEventListener('click', () => {
     const left = scrollContainer.offsetWidth + scrollContainer.scrollLeft >= scrollContainer.scrollWidth ? -1000000 : 500;
     scrollContainer.scrollBy({ left, behavior: 'smooth' });
 });
+
+
+
+
+
+// Get the button and the section
+const button = document.querySelector('.jump-to-images-btn');
+const imagesSection = document.querySelector('#images'); // Assuming #images is the section you're referring to
+
+// Check the scroll position and adjust opacity of the button
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY; // Current scroll position
+    const imagesSectionPosition = imagesSection.offsetTop; // Position of #images section from the top of the page
+    const sectionHeight = imagesSection.offsetHeight; // Height of the #images section
+
+    // Start fading earlier (adjust this value for earlier fading)
+    const fadeStart = imagesSectionPosition - 1000; // Start fading 300px before the section
+    const fadeEnd = imagesSectionPosition - 600; // Make it fully invisible 300px before the section
+
+    // If the scroll position is past the fadeStart, calculate opacity
+    if (scrollPosition >= fadeStart && scrollPosition < fadeEnd) {
+        // Calculate opacity: start fading when the user scrolls past fadeStart, until it reaches 0 at fadeEnd
+        const opacity = 1 - ((scrollPosition - fadeStart) / 300); // Fade over 300px distance
+        button.style.opacity = opacity; // Adjust opacity
+    } else if (scrollPosition >= fadeEnd) {
+        // Once the user has scrolled past the fadeEnd, the button will be fully transparent
+        button.style.opacity = 0;
+    } else {
+        // Before the #images section starts, the button remains fully visible
+        button.style.opacity = 1;
+    }
+});
