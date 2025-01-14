@@ -104,16 +104,59 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Function to toggle the visibility of AI gallery
-function toggleGallery() {
-    const gallery = document.getElementById('new-images');
-    const button = document.getElementById('show-gallery-btn');
-    
-    if (gallery.style.display === 'none' || gallery.style.display === '') {
-        gallery.style.display = 'block';  // Show the gallery
-        button.textContent = 'Hide AI Generated Images';  // Change button text to 'Hide'
+// Make extra images button work in right position
+document.addEventListener('scroll', handleScroll);
+
+const buttonContainer = document.querySelector('.scroll-button-container');
+const gallery = document.getElementById('new-images');
+const materialsSection = document.getElementById('materials');
+
+function handleScroll() {
+    if (gallery.style.display === 'block') {
+        const galleryBottom = gallery.offsetTop + gallery.offsetHeight;
+        const materialsTop = materialsSection.offsetTop;
+        const buttonHeight = buttonContainer.offsetHeight;
+
+        if (window.scrollY + buttonHeight >= materialsTop) {
+            // Fix the button above the materials section
+            buttonContainer.style.position = 'absolute';
+            buttonContainer.style.top = `${materialsTop - buttonHeight}px`;
+            buttonContainer.classList.add('fixed');
+            buttonContainer.classList.remove('sticky');
+        } else if (window.scrollY >= galleryBottom - buttonHeight) {
+            // Fix the button just below the gallery
+            buttonContainer.style.position = 'absolute';
+            buttonContainer.style.top = `${galleryBottom}px`;
+            buttonContainer.classList.add('fixed');
+            buttonContainer.classList.remove('sticky');
+        } else {
+            // Make it sticky when scrolling within the gallery area
+            buttonContainer.style.position = 'sticky';
+            buttonContainer.style.top = '65px';
+            buttonContainer.classList.add('sticky');
+            buttonContainer.classList.remove('fixed');
+        }
     } else {
-        gallery.style.display = 'none';  // Hide the gallery
-        button.textContent = 'Show AI Generated Images';  // Reset button text
+        // Reset position when gallery is hidden
+        buttonContainer.style.position = 'relative';
+        buttonContainer.style.top = 'auto';
+        buttonContainer.classList.remove('fixed', 'sticky');
+    }
+}
+
+// Make extra image button show correctly
+function toggleGallery() {
+    const toggleButton = document.getElementById('show-gallery-btn');
+
+    if (gallery.style.display === 'none' || gallery.style.display === '') {
+        gallery.style.display = 'block';
+        toggleButton.textContent = 'Hide AI Generated Images';
+        handleScroll();
+    } else {
+        gallery.style.display = 'none';
+        toggleButton.textContent = 'Show AI Generated Images';
+        buttonContainer.style.position = 'relative';
+        buttonContainer.style.top = 'auto';
+        buttonContainer.classList.remove('fixed', 'sticky');
     }
 }

@@ -48,9 +48,11 @@
     </style>
 
 
+<section id="sticky-container">
+        
     <!--navigation bar-->
-    <nav>
-        <ul>
+    <nav id="home">
+        <ul>            
             <li><a href="about_me.html">About Me</a></li>
             <li><a href="index.html#projects">Projects</a></li>
             <li><a href="index.html#contact">Contact</a></li>
@@ -99,6 +101,14 @@
                 <img src="images/prompt13_5.jpg" alt="5">
             </div>
             
+            <div class="text-container">
+                <p>If you ask AI today to generate an image of wooden furniture, you will instantly get a hyper realistic image.
+                </p>
+                <p>Click the button to see some AI generated images. The first one is made by ChatGPT in January 2025, the rest are considered 
+                    'higher quality' images generated with DALLE-2 in early September 2022. Crazy to see how fast AI is evolving!
+                </p>
+            </div>
+
             <!-- Button to reveal the new gallery -->
             <div class="scroll-button-container">
                 <button id="show-gallery-btn" onclick="toggleGallery()">Show AI Generated Images</button>
@@ -107,15 +117,14 @@
             <!-- Extra (hidden) images -->
             <div class="image-gallery-container">
                 <div class="new-image-gallery" id="new-images">
-                    <img src="images/prompt13_AI_1.jpg" alt="1">
-                    <img src="images/prompt13_AI_2.jpg" alt="2">
+                    <img src="images/dalle2025_furniture.jpg" alt="1">
                     <img src="images/prompt13_AI_3.jpg" alt="3">
                     <img src="images/prompt13_AI_4.jpg" alt="4">
                     <img src="images/prompt13_AI_5.jpg" alt="5">
-                    <img src="images/prompt13_AI_6.jpg" alt="6">
                     <img src="images/prompt13_AI_7.jpg" alt="7">
                     <img src="images/prompt13_AI_8.jpg" alt="8">
                     <img src="images/prompt13_AI_9.jpg" alt="9">
+                    <img src="images/prompt13_AI_2.jpg" alt="2">
                     <img src="images/prompt13_AI_10.jpg" alt="10">
                     <img src="images/prompt13_AI_11.jpg" alt="11">
                     <img src="images/prompt13_AI_12.jpg" alt="12">
@@ -132,20 +141,23 @@
             </div>
 
             <!--second text box-->
-            <div class="text-container">
+            <div class="text-container" id="materials">
                 <h3>Materials used</h3>
                 <ul>     
                     <li>Solid Elm</li>
                     <li>Beeswax</li>
+                    <li>DALLE-2</li>
                 </ul>
             </div>
         </div>
-
+    </section>
+    
         <!-- Jump to Images button -->
         <a href="#images" class="jump-to-images-btn">
             &#8595; <!-- Downward arrow symbol -->
         </a>
     </section>
+
 
     <!--other projects section-->
     <section id="projects">

@@ -238,7 +238,13 @@ text-align: justify;
     cursor: pointer;
 }
 
+#materials {
+    scroll-margin-top: 80px;
+}
 
+#extra-image-text {
+    scroll-margin-top: 120px;
+}
 /* Projects Section */
 #projects {
     background-color: #fff;
@@ -404,12 +410,6 @@ html {
     }
 }
 
-/* Style for the button to toggle the new gallery */
-.scroll-button-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
 #show-gallery-btn {
     background-color: #12372A;
     color: #fff;
@@ -420,8 +420,36 @@ html {
     font-size: 16px;
     border-radius: 5px;
     transition: transform 0.3s ease;
+    position: sticky;
+    top: 0;
+    scroll-margin-top: 70px;
 }
 
 #show-gallery-btn:hover {
     transform: scale(1.05);
+}
+
+/* Sticky extra images button */
+.sticky-container {
+    position: sticky;
+    top: 0;
+}
+
+.scroll-button-container {
+    position: relative;
+    z-index: 100;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.scroll-button-container.sticky {
+    position: sticky;
+    top: 65px;
+}
+
+.scroll-button-container.fixed {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
