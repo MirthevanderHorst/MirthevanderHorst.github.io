@@ -18,9 +18,24 @@
     <!--header-->
     <header id="header">
         <div class="container">
-            <h1><a href="index.html#home">Mirthe van der Horst</a></h1>
+            <h1><a id="header-link" href="index.html#home">Mirthe van der Horst</a></h1>
         </div>
     </header>
+
+    <style>
+        /* Styles on smaller screens */
+        #header {
+            background-image: url('images/pocket_knife_1.jpg');
+            background-position: center 35%;
+        }
+    
+        @media (max-width: 750px) {
+        #header {
+            padding: 10vw 0;
+            background-position: center 20%;
+        }
+    }
+    </style>
 
     <!--navigation bar-->
     <nav>

@@ -27,24 +27,48 @@ a {
     color: #fff;
 }
 
+/* Header details */
 #header {
     background-image: url('../images/background_2.jpg');
-    background-size: cover; /* Ensures the image covers the entire header */
-    background-position: center 38%; /* Keeps the image centered */
+    background-size: cover;
+    background-position: center 38%;
     background-color: #fff;
-    padding: 10px 0; /* Decreased top and bottom padding */
+    padding: 10px 0;
     text-align: center;
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-repeat: no-repeat;
+    position: relative;
+    height: 6vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+@media (min-width: 750px) {
+    /* Dark shadow overlay */
+    #header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    #header > * {
+        position: relative;
+        z-index: 2;
+    }
 }
 
 #header h1 {
-    font-size: 2rem; /* Smaller font size for the header */
+    font-size: 2rem;
     margin: 0;
-}
-
-#header p {
-    font-size: 1rem; /* Adjust the paragraph text size */
-    margin: 5px 0;
+    transition: transform 0.3s ease;
 }
 
 /* Header as a button */
@@ -53,24 +77,23 @@ a {
     text-decoration: none;
     font-weight: bold;
     font-size: 2rem;
-    transition: color 0.3s ease, color 0.4s ease;
 }
 
-#header h1 a:hover {
-    color: #12372A; /* Lighter green color on hover */
+#header h1:hover {
+    transform: scale(1.05);
 }
 
 /* Navigation bar */
 nav {
-    background-color: #12372A; /* Dark gray background */
-    height: 50px; /* Set the height of the navigation bar */
-    display: flex; /* Use Flexbox to align the items */
-    justify-content: center; /* Centers the links horizontally */
-    align-items: center; /* Centers the links vertically */
-    position: sticky; /* Makes the navigation bar stick to the top */
-    top: 0; /* Ensures it's at the top of the screen */
-    z-index: 1000; /* Keeps the nav on top of other elements */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Adds a soft shadow under the nav */
+    background-color: #12372A;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* Navigation links styles */
@@ -78,26 +101,25 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Use Flexbox on the list */
+    display: flex;
 }
 
 nav ul li {
-    margin-right: 15px; /* Adds space between the list items */
-    padding-left: 15px; /* Adds space in front of the first word */
+    margin-right: 15px;
+    padding-left: 15px;
 }
 
 nav ul li a {
-    color: #fff; /* Make the links white to stand out on the dark background */
+    color: #fff;
     font-weight: bold;
     font-size: 16px;
-    padding: 10px 15px; /* Add padding to the links for better spacing */
-    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
-    display: inline-block; /* Make the link an inline block for scaling */
+    padding: 10px 15px;
+    transition: transform 0.3s ease;
+    display: inline-block;
 }
 
-/* Enlarge the text when hovering over the nav links */
 nav ul li a:hover {
-    transform: scale(1.3); /* Enlarge the text by 10% */
+    transform: scale(1.3);
 }
 
 /*specific project layout */
@@ -105,6 +127,7 @@ nav ul li a:hover {
 #images {
     padding-top: 70px;
 }
+
 /* Pinterest-style image gallery */
 .image-gallery, .image-gallery video {
     column-count: 3;
@@ -128,7 +151,7 @@ nav ul li a:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Make it responsive */
+/* Make image gallery responsive */
 @media (max-width: 1200px) {
     .image-gallery, .image-gallery video {
         column-count: 2;
@@ -165,6 +188,24 @@ text-align: justify;
 
 /* end specific project layout */
 
+/* Button to jump to images */
+.jump-to-images-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #12372A;
+    color: #fff;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
 
 /* Modal Styles */
 .modal {
@@ -212,22 +253,22 @@ text-align: justify;
 
 .project-scroll-container-wrapper {
     display: flex;
-    align-items: center; /* Vertically align buttons with the project boxes */
-    justify-content: center; /* Center the content horizontally */
-    gap: 10px; /* Space between buttons and project-scroll-container */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     padding: 10px 0;
-    position: relative; /* Ensures proper positioning */
+    position: relative;
 }
 
 .project-scroll-container {
     display: flex;
     gap: 20px;
-    overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-x: auto;
     overflow-y: hidden;
-    white-space: nowrap; /* Prevents wrapping */
+    white-space: nowrap;
     padding: 10px 20px;
     justify-content: flex-start;
-    scrollbar-width: none; /* Firefox: Hide scrollbar */
+    scrollbar-width: none;
 }
 
 .project-scroll-container::-webkit-scrollbar {
@@ -321,22 +362,4 @@ footer p {
 /* Enable smooth scrolling across the page */
 html {
     scroll-behavior: smooth;
-}
-
-.jump-to-images-btn {
-    position: fixed; /* Keeps the button fixed to the screen */
-    bottom: 20px; /* Position it near the bottom of the screen */
-    right: 20px; /* Position it on the right side */
-    background-color: #12372A; /* Dark green background color */
-    color: #fff; /* White color for the arrow */
-    font-size: 24px; /* Adjust the font size for better visibility */
-    width: 50px; /* Width of the button */
-    height: 50px; /* Height of the button */
-    border-radius: 50%; /* Make the button round */
-    display: flex; /* Use flexbox to align content */
-    justify-content: center; /* Horizontally center the arrow */
-    text-decoration: none; /* Remove the underline from the link */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow to the button */
-    transition: opacity 0.5s ease; /* Smooth opacity transition */
-    opacity: 1; /* Initially fully visible */
 }

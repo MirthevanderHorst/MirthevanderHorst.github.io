@@ -15,16 +15,31 @@
 </head>
 
 <body>
-    <!--header-->
+    <!-- header-->
     <header id="header">
         <div class="container">
-            <h1><a href="index.html#home">Mirthe van der Horst</a></h1>
+            <h1><a id="header-link" href="index.html#home">Mirthe van der Horst</a></h1>
         </div>
     </header>
 
+    <style>
+        /* Styles on smaller screens */
+        #header {
+            background-image: url('images/background_2.jpg');
+            background-position: center 35%;
+        }
+    
+        @media (max-width: 750px) {
+        #header {
+            padding: 10vw 0;
+            background-position: center 27%;
+        }
+    }
+    </style>
+
     <!--navigation bar-->
-    <nav>
-        <ul>
+    <nav id="home">
+        <ul>            
             <li><a href="about_me.html">About Me</a></li>
             <li><a href="index.html#projects">Projects</a></li>
             <li><a href="index.html#contact">Contact</a></li>

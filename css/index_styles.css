@@ -245,7 +245,6 @@ nav ul li a:hover {
 #contact {
     background-color: #f9f9f9;
     padding: 0%;
-    padding-left: 0px;
     text-align: left;
 }
 
@@ -254,6 +253,7 @@ nav ul li a:hover {
     text-decoration: none;
     font-weight: bold;
     margin: 0 5px;
+
 }
 
 #contact a:hover {

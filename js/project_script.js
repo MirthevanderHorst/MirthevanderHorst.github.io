@@ -1,19 +1,17 @@
-// Function to open the modal with the clicked image
+// Function to open the enlarged image
 const images = document.querySelectorAll('.image-gallery img');
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
-let currentIndex = 0; // Variable to track the currently displayed image
+let currentIndex = 0;
 
-// Open modal and display clicked image
 images.forEach((img, index) => {
     img.addEventListener('click', function () {
         modal.style.display = 'flex';
         modalImg.src = this.src;
-        currentIndex = index; // Set current index when image is clicked
+        currentIndex = index;
     });
 });
 
-// Close the modal
 function closeModal() {
     modal.style.display = 'none';
 }
@@ -25,15 +23,13 @@ modal.addEventListener('click', function (e) {
     }
 });
 
-// Function to navigate through images using arrow keys
+// Navigate through images using arrow keys
 document.addEventListener('keydown', function (event) {
     if (modal.style.display === 'flex') {
         if (event.key === 'ArrowRight') {
-            // Show next imagep
             currentIndex = (currentIndex + 1) % images.length;
             modalImg.src = images[currentIndex].src;
         } else if (event.key === 'ArrowLeft') {
-            // Show previous image
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             modalImg.src = images[currentIndex].src;
         } else if (event.key === 'Escape') {
@@ -42,22 +38,20 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-// Add functionality to click on the enlarged image to go to the next/previous image
+// Go to next enlarged image by clicking on it
 modalImg.addEventListener('click', function (event) {
-    const clickX = event.offsetX; // Get the X coordinate of the click inside the image
-    const imageWidth = modalImg.offsetWidth; // Get the width of the image
+    const clickX = event.offsetX;
+    const imageWidth = modalImg.offsetWidth;
 
-    // If clicked on the left half, go to the previous image
     if (clickX < imageWidth / 2) {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
     } else {
-        // If clicked on the right half, go to the next image
         currentIndex = (currentIndex + 1) % images.length;
     }
-
-    modalImg.src = images[currentIndex].src; // Change the modal image source
+    modalImg.src = images[currentIndex].src;
 });
 
+// Scroll bar for other projects
 const scrollContainer = document.getElementById('scroll-container');
 const scrollLeft = document.getElementById('scroll-left');
 const scrollRight = document.getElementById('scroll-right');
@@ -72,34 +66,40 @@ scrollRight.addEventListener('click', () => {
     scrollContainer.scrollBy({ left, behavior: 'smooth' });
 });
 
+// Header link based on screen size
+function updateLink() {
+    const headerLink = document.getElementById('header-link');
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth < 750) {
+        headerLink.href = "#images";
+    } else {
+        headerLink.href = "index.html#home";
+    }
+}
+
+window.addEventListener('load', updateLink);
+window.addEventListener('resize', updateLink);
 
 
-
-
-// Get the button and the section
+// Button to quickly navigate to images section
 const button = document.querySelector('.jump-to-images-btn');
-const imagesSection = document.querySelector('#images'); // Assuming #images is the section you're referring to
+const imagesSection = document.querySelector('#images');
 
-// Check the scroll position and adjust opacity of the button
 window.addEventListener('scroll', function() {
-    const scrollPosition = window.scrollY; // Current scroll position
-    const imagesSectionPosition = imagesSection.offsetTop; // Position of #images section from the top of the page
-    const sectionHeight = imagesSection.offsetHeight; // Height of the #images section
+    const scrollPosition = window.scrollY;
+    const imagesSectionPosition = imagesSection.offsetTop;
+    const sectionHeight = imagesSection.offsetHeight;
 
-    // Start fading earlier (adjust this value for earlier fading)
-    const fadeStart = imagesSectionPosition - 1000; // Start fading 300px before the section
-    const fadeEnd = imagesSectionPosition - 600; // Make it fully invisible 300px before the section
+    const fadeStart = imagesSectionPosition - 1000;
+    const fadeEnd = imagesSectionPosition - 600;
 
-    // If the scroll position is past the fadeStart, calculate opacity
     if (scrollPosition >= fadeStart && scrollPosition < fadeEnd) {
-        // Calculate opacity: start fading when the user scrolls past fadeStart, until it reaches 0 at fadeEnd
-        const opacity = 1 - ((scrollPosition - fadeStart) / 300); // Fade over 300px distance
-        button.style.opacity = opacity; // Adjust opacity
+        const opacity = 1 - ((scrollPosition - fadeStart) / 300);
+        button.style.opacity = opacity;
     } else if (scrollPosition >= fadeEnd) {
-        // Once the user has scrolled past the fadeEnd, the button will be fully transparent
         button.style.opacity = 0;
     } else {
-        // Before the #images section starts, the button remains fully visible
         button.style.opacity = 1;
     }
 });

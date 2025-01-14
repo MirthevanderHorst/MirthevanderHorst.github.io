@@ -18,9 +18,22 @@
     <!--header-->
     <header id="header">
         <div class="container">
-            <h1><a href="index.html#home">Mirthe van der Horst</a></h1>
+            <h1><a id="header-link" href="index.html#home">Mirthe van der Horst</a></h1>
         </div>
     </header>
+
+    <style>
+        /* Styles on smaller screens */
+        #header {
+            background-image: url('images/grow_along_6.jpg');
+            background-position: center 37%;
+        }
+
+        @media (max-width: 750px) {
+        #header {padding: 15vw 0;
+        }
+    }
+    </style>
 
     <!--navigation bar-->
     <nav>
@@ -40,7 +53,7 @@
             </div>
 
             <!--images-->
-            <div class="image-gallery">
+            <div class="image-gallery" id="images">
                 <img src="images/grow_along_1.jpg" alt="1">
                 <img src="images/grow_along_2.jpg" alt="2">
                 <img src="images/grow_along_3.jpg" alt="3">
@@ -66,6 +79,10 @@
                 </ul>
             </div>
         </div>
+        <!-- Jump to Images button -->
+        <a href="#images" class="jump-to-images-btn">
+            &#8595; <!-- Downward arrow symbol -->
+        </a>
     </section>
 
     <!--other projects section-->

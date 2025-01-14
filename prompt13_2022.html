@@ -18,9 +18,36 @@
     <!--header-->
     <header id="header">
         <div class="container">
-            <h1><a href="index.html#home">Mirthe van der Horst</a></h1>
+            <h1><a id="header-link" href="index.html#home">Mirthe van der Horst</a></h1>
         </div>
     </header>
+
+    <style>
+        /* Styles on smaller screens */
+        @media (max-width: 750px) {
+        #header {
+            background-image: url('images/prompt13_4.jpg');
+            background-position: center 65%;
+            padding: 8vw 0;
+        }
+    }
+    </style>
+
+    <style>
+        /* Styles on smaller screens */
+        #header {
+            background-image: url('images/prompt13_4.jpg');
+            background-position: top;
+        }
+
+        @media (max-width: 750px) {
+        #header {
+            padding: 10vw 0;
+            background-position: center 65%;
+        }
+    }
+    </style>
+
 
     <!--navigation bar-->
     <nav>
