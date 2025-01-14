@@ -72,7 +72,7 @@ function updateLink() {
     const screenWidth = window.innerWidth;
 
     if (screenWidth < 750) {
-        headerLink.href = "index.html#home";
+        headerLink.href = "#images";
     } else {
         headerLink.href = "index.html#home";
     }
