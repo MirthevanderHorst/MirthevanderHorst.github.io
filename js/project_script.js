@@ -67,16 +67,16 @@ scrollRight.addEventListener('click', () => {
 });
 
 // Header link based on screen size
-// function updateLink() {
-//     const headerLink = document.getElementById('header-link');
-//     const screenWidth = window.innerWidth;
+function updateLink() {
+    const headerLink = document.getElementById('header-link');
+    const screenWidth = window.innerWidth;
 
-//     if (screenWidth < 750) {
-//         headerLink.href = "#images";
-//     } else {
-//         headerLink.href = "index.html#home";
-//     }
-// }
+    if (screenWidth < 750) {
+        headerLink.href = "index.html#home";
+    } else {
+        headerLink.href = "index.html#home";
+    }
+}
 
 window.addEventListener('load', updateLink);
 window.addEventListener('resize', updateLink);
