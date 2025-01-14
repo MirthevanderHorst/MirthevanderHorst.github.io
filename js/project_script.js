@@ -147,6 +147,7 @@ function handleScroll() {
 // Make extra image button show correctly
 function toggleGallery() {
     const toggleButton = document.getElementById('show-gallery-btn');
+    const extraImageText = document.getElementById('extra-image-text');
 
     if (gallery.style.display === 'none' || gallery.style.display === '') {
         gallery.style.display = 'block';
@@ -158,5 +159,10 @@ function toggleGallery() {
         buttonContainer.style.position = 'relative';
         buttonContainer.style.top = 'auto';
         buttonContainer.classList.remove('fixed', 'sticky');
+
+        extraImageText.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
     }
 }
