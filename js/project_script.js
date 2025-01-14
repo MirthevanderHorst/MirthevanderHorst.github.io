@@ -1,5 +1,5 @@
 // Function to open the enlarged image
-const images = document.querySelectorAll('.image-gallery img');
+const images = document.querySelectorAll('.image-gallery img, .new-image-gallery img');
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
 let currentIndex = 0;
@@ -103,3 +103,17 @@ window.addEventListener('scroll', function() {
         button.style.opacity = 1;
     }
 });
+
+// Function to toggle the visibility of AI gallery
+function toggleGallery() {
+    const gallery = document.getElementById('new-images');
+    const button = document.getElementById('show-gallery-btn');
+    
+    if (gallery.style.display === 'none' || gallery.style.display === '') {
+        gallery.style.display = 'block';  // Show the gallery
+        button.textContent = 'Hide AI Generated Images';  // Change button text to 'Hide'
+    } else {
+        gallery.style.display = 'none';  // Hide the gallery
+        button.textContent = 'Show AI Generated Images';  // Reset button text
+    }
+}

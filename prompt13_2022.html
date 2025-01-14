@@ -34,7 +34,6 @@
     </style>
 
     <style>
-        /* Styles on smaller screens */
         #header {
             background-image: url('images/prompt13_4.jpg');
             background-position: top;
@@ -68,7 +67,7 @@
                 the existence of Artificial Intelligence. It may be hard to imagine, but it was an incredibly difficult process to generate 
                 images based on a short textual description (prompt) back then. Now, many companies such as OpenAI (ChatGPT) and Google offer services 
                 to use AI to create images in a matter of seconds. When I presented the idea of using AI in the creative process in early 2022, it was seen 
-                as a 'revolutionary concept,' praised by both teachers and fellow students. However, when the project came to an end, developments in 
+                as a 'revolutionary concept' (as my teachers called it). However, when the project came to an end, developments in 
                 the field of Artificial Intelligence 
                 started increasing rapidly. So much so that many people, such as graphic designers and artists, started worrying about the future of their 
                 profession and started forming strong opinions.</p>
@@ -99,6 +98,38 @@
                 <img src="images/prompt13_1.jpg" alt="6">
                 <img src="images/prompt13_5.jpg" alt="5">
             </div>
+            
+            <!-- Button to reveal the new gallery -->
+            <div class="scroll-button-container">
+                <button id="show-gallery-btn" onclick="toggleGallery()">Show AI Generated Images</button>
+            </div>
+
+            <!-- Extra (hidden) images -->
+            <div class="image-gallery-container">
+                <div class="new-image-gallery" id="new-images">
+                    <img src="images/prompt13_AI_1.jpg" alt="1">
+                    <img src="images/prompt13_AI_2.jpg" alt="2">
+                    <img src="images/prompt13_AI_3.jpg" alt="3">
+                    <img src="images/prompt13_AI_4.jpg" alt="4">
+                    <img src="images/prompt13_AI_5.jpg" alt="5">
+                    <img src="images/prompt13_AI_6.jpg" alt="6">
+                    <img src="images/prompt13_AI_7.jpg" alt="7">
+                    <img src="images/prompt13_AI_8.jpg" alt="8">
+                    <img src="images/prompt13_AI_9.jpg" alt="9">
+                    <img src="images/prompt13_AI_10.jpg" alt="10">
+                    <img src="images/prompt13_AI_11.jpg" alt="11">
+                    <img src="images/prompt13_AI_12.jpg" alt="12">
+                    <img src="images/prompt13_AI_13.jpg" alt="13">
+                    <img src="images/prompt13_AI_14.jpg" alt="14">
+                    <img src="images/prompt13_AI_15.jpg" alt="15">
+                    <img src="images/prompt13_AI_16.jpg" alt="16">
+                    <img src="images/prompt13_AI_17.jpg" alt="17">
+                    <img src="images/prompt13_AI_18.jpg" alt="18">
+                    <img src="images/prompt13_AI_19.jpg" alt="19">
+                    <img src="images/prompt13_AI_20.jpg" alt="20">
+                    <img src="images/prompt13_AI_21.jpg" alt="21">
+                </div>
+            </div>
 
             <!--second text box-->
             <div class="text-container">
@@ -109,6 +140,7 @@
                 </ul>
             </div>
         </div>
+
         <!-- Jump to Images button -->
         <a href="#images" class="jump-to-images-btn">
             &#8595; <!-- Downward arrow symbol -->
