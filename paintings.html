@@ -50,13 +50,13 @@
         <div class="container">
             <div class="text-container">
                 <h2>Paintings</h2>
-                <p>project description</p>
+                <!-- <p>project description</p> -->
             </div>
 
             <!--images-->
             <div class="image-gallery" id="images">
                 <img src="images/painting_1.jpg" alt="1">
-                <img src="images/painting_2.jpg" alt="2">
+                <img src="images/painting_2.jpg" alt="2" data-extra-text='"Headache"'>
             </div>
 
             <!-- second text box -->
@@ -194,10 +194,11 @@
         </div>
     </section>
 
-    <!-- Modal for Enlarged Image -->
+    <!-- Modal -->
     <div id="imageModal" class="modal">
+        <img id="modalImage" src="" alt="Enlarged Image">
+        <div id="modalText" class="modal-text"></div>
         <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage" src="">
     </div>
 
     <!--footer-->

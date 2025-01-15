@@ -50,18 +50,25 @@
         <div class="container">
             <div class="text-container">
                 <h2>Other Projects</h2>
-                <p>project description</p>
+                <p>A mix of volunteering work, paid work and personal projects. Usually, I am too focussed on the work to remember to take pictures of it. Here is a small collection of work I did not forget to 
+                take pictures of.</p>
             </div>
 
             <!--images-->
             <div class="image-gallery" id="images">
-                <img src="images/travel_2.jpg" alt="2">
-                <img src="images/travel_4.jpg" alt="4">
-                <img src="images/travel_6.jpg" alt="6">
-                <img src="images/self_portrait_2.jpg" alt="2">
-                <img src="images/travel_8.jpg" alt="8">
-                <img src="images/travel_9.jpg" alt="9">
-                <img src="images/travel_10.jpg" alt="10">
+                <img src="images/other_4.jpg" alt="6" data-extra-text='Small three-legged Chestnut burl coffee table'>
+                <img src="images/travel_2.jpg" alt="2" data-extra-text='Teaching people how to set up and use tools correctly (only picture without other recognizable people)'>
+                <img src="images/travel_4.jpg" alt="4" data-extra-text='Refinished a coffee table for a lovely family in Croatia'>
+                <img src="images/self_portrait_2.jpg" alt="2" data-extra-text='Cobbing work in Bulgaria'>
+                <img src="images/other_2.jpg" alt="6" data-extra-text='Making a round tenon by hand, precise chisel work'>
+                <img src="images/other_3.jpg" alt="6" data-extra-text='Handmade Mortise and Tenon joint in Chestnut burl'>
+                <img src="images/other_6.jpg" alt="6" data-extra-text='Small bench out of solid Elm'>
+                <img src="images/travel_1.jpg" alt="1" data-extra-text='Clay house building in Germany'>
+                <img src="images/travel_6.jpg" alt="6" data-extra-text='Working with a view is the best kind of work ;)'>
+                <img src="images/travel_8.jpg" alt="8" data-extra-text='Stonework and wooden beams for a natural swimming pond in process'>
+                <img src="images/travel_10.jpg" alt="10" data-extra-text='Stonework for a natural swimming pond in process'>
+                <img src="images/travel_9.jpg" alt="9" data-extra-text='Stonework and wooden beams for a natural swimming pond in process'>
+                <video src="images/other_5.mp4" alt="2" controls muted></video> <!-- Video element -->
             </div>
 
             <!-- second text box -->
@@ -198,10 +205,11 @@
         </div>
     </section>
 
-    <!-- Modal for Enlarged Image -->
+    <!-- Modal -->
     <div id="imageModal" class="modal">
+        <img id="modalImage" src="" alt="Enlarged Image">
+        <div id="modalText" class="modal-text"></div>
         <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage" src="">
     </div>
 
     <!--footer-->
