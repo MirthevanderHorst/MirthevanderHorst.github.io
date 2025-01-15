@@ -15,12 +15,26 @@
 </head>
 
 <body>
-    <!--header-->
+    <!-- header-->
     <header id="header">
         <div class="container">
-            <h1><a href="index.html#home">Mirthe van der Horst</a></h1>
+            <h1><a id="header-link" href="index.html#home">Mirthe van der Horst</a></h1>
         </div>
     </header>
+
+    <style>
+        #header {
+            background-image: url('images/windmill_1.jpg');
+            background-position: center 65%;
+        }
+
+        @media (max-width: 750px) {
+        #header {
+            padding: 12vw 0;
+            background-position: center 55%;
+        }
+    }
+    </style>
 
     <!--navigation bar-->
     <nav>
@@ -40,7 +54,7 @@
             </div>
 
             <!--images-->
-            <div class="image-gallery">
+            <div class="image-gallery" id="images">
                 <img src="images/donut_1.jpg" alt="1">
                 <video src="images/donut_2.mp4" alt="2" controls></video> <!-- Video element -->
                 <img src="images/windmill_1.jpg" alt="1">
@@ -50,16 +64,23 @@
                 <img src="images/windmill_5.jpg" alt="5">
             </div>
 
-            <!-- second text box
-            <div class="text-container">
+            <!-- second text box -->
+            <!-- <div class="text-container" id="materials">
                 <h3>Materials used</h3>
                 <ul>     
                     <li>wood</li>
                     <li>wood</li>
                 </ul>
-            </div> -->
+            </div>  -->
+            
+            <!-- Jump to Images button  -->
+            <a href="#images" class="jump-to-images-btn">
+                &#8595;
+            </a>
+
         </div>
     </section>
+</section>
 
     <!--other projects section-->
     <section id="projects">

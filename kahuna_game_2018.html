@@ -15,12 +15,26 @@
 </head>
 
 <body>
-    <!--header-->
+    <!-- header-->
     <header id="header">
         <div class="container">
-            <h1><a href="index.html#home">Mirthe van der Horst</a></h1>
+            <h1><a id="header-link" href="index.html#home">Mirthe van der Horst</a></h1>
         </div>
     </header>
+
+    <style>
+        #header {
+            background-image: url('images/kahuna_1.jpg');
+            background-position: center 58%;
+        }
+
+        @media (max-width: 750px) {
+        #header {
+            padding: 10vw 0;
+            background-position: center 73%;
+        }
+    }
+    </style>
 
     <!--navigation bar-->
     <nav>
@@ -40,14 +54,14 @@
             </div>
 
             <!--images-->
-            <div class="image-gallery">
+            <div class="image-gallery" id="images">
                 <img src="images/kahuna_1.jpg" alt="1">
                 <img src="images/kahuna_2.jpg" alt="2">
                 <img src="images/kahuna_3.jpg" alt="3">
             </div>
 
             <!--second text box-->
-            <div class="text-container">
+            <div class="text-container" id="materials">
                 <h3>Materials used</h3>
                 <ul>     
                     <li>Scrap wood and veneer</li>
@@ -56,8 +70,15 @@
                     <li>Varnish</li>
                 </ul>
             </div>
+            
+            <!-- Jump to Images button -->
+            <a href="#images" class="jump-to-images-btn">
+                &#8595; <!-- Downward arrow symbol -->
+            </a>
+            
         </div>
     </section>
+</section>
 
     <!--other projects section-->
     <section id="projects">
