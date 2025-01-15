@@ -1,22 +1,33 @@
-// Function to open the enlarged image
 const images = document.querySelectorAll('.image-gallery img, .new-image-gallery img');
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
+const modalText = document.getElementById('modalText');
 let currentIndex = 0;
 
+// Function to update the modal content (image and text)
+function updateModalContent(index) {
+    modalImg.src = images[index].src;
+    const extraText = images[index].getAttribute('data-extra-text');
+
+    if (extraText) {
+        modalText.textContent = extraText;
+        modalText.style.display = 'block';
+    } else {
+        modalText.textContent = '';
+        modalText.style.display = 'none';
+    }
+}
+
+// Open modal when an image is clicked
 images.forEach((img, index) => {
     img.addEventListener('click', function () {
         modal.style.display = 'flex';
-        modalImg.src = this.src;
         currentIndex = index;
+        updateModalContent(currentIndex);
     });
 });
 
-function closeModal() {
-    modal.style.display = 'none';
-}
-
-// Close the modal when clicking outside the image (on the background)
+// Close modal when clicking outside the image
 modal.addEventListener('click', function (e) {
     if (e.target === modal) {
         closeModal();
@@ -28,17 +39,17 @@ document.addEventListener('keydown', function (event) {
     if (modal.style.display === 'flex') {
         if (event.key === 'ArrowRight') {
             currentIndex = (currentIndex + 1) % images.length;
-            modalImg.src = images[currentIndex].src;
+            updateModalContent(currentIndex);
         } else if (event.key === 'ArrowLeft') {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
-            modalImg.src = images[currentIndex].src;
+            updateModalContent(currentIndex);
         } else if (event.key === 'Escape') {
             closeModal();
         }
     }
 });
 
-// Go to next enlarged image by clicking on it
+// Navigate through images by clicking on modal image
 modalImg.addEventListener('click', function (event) {
     const clickX = event.offsetX;
     const imageWidth = modalImg.offsetWidth;
@@ -48,8 +59,14 @@ modalImg.addEventListener('click', function (event) {
     } else {
         currentIndex = (currentIndex + 1) % images.length;
     }
-    modalImg.src = images[currentIndex].src;
+
+    updateModalContent(currentIndex);
 });
+
+// Close modal function
+function closeModal() {
+    modal.style.display = 'none';
+}
 
 // Scroll bar for other projects
 const scrollContainer = document.getElementById('scroll-container');

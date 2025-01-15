@@ -2,13 +2,13 @@
 const image = document.getElementById('about-image');
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
-let currentIndex = 0; // Variable to track the currently displayed image
+let currentIndex = 0;
 
 // Open the modal when the image is clicked
 image.addEventListener('click', function (e) {
-    e.preventDefault(); // Prevents default behavior
+    e.preventDefault();
     modal.style.display = 'flex';
-    modalImg.src = this.src; // Set the modal image source to the clicked image
+    modalImg.src = this.src;
 });
 
 // Close the modal
@@ -42,8 +42,8 @@ document.addEventListener('keydown', function (event) {
 
 // Add functionality to click on the enlarged image to go to the next/previous image
 modalImg.addEventListener('click', function (event) {
-    const clickX = event.offsetX; // Get the X coordinate of the click inside the image
-    const imageWidth = modalImg.offsetWidth; // Get the width of the image
+    const clickX = event.offsetX;
+    const imageWidth = modalImg.offsetWidth;
 
     // If clicked on the left half, go to the previous image
     if (clickX < imageWidth / 2) {
@@ -53,7 +53,7 @@ modalImg.addEventListener('click', function (event) {
         currentIndex = (currentIndex + 1) % images.length;
     }
 
-    modalImg.src = images[currentIndex].src; // Change the modal image source
+    modalImg.src = images[currentIndex].src;
 });
 
 const scrollContainer = document.getElementById('scroll-container');

@@ -62,8 +62,8 @@
                 
             <!--images-->
             <div class="image-gallery" id="images">
-                <img src="images/self_portrait_6.jpg" alt="1">
-                <img src="images/background_1.jpg" alt="1">
+                <img src="images/self_portrait_6.jpg" alt="1" data-extra-text="This is a text test.">
+                <img src="images/background_1.jpg" alt="1" data-extra-text="Text test 2">
                 <img src="images/background_2.jpg" alt="2">
                 <img src="images/self_portrait_11.jpg" alt="1">
                 <img src="images/background_3.jpg" alt="3">
@@ -120,7 +120,15 @@
                 </ul>
             </div>
         </div>
+        
     </section>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <img id="modalImage" src="" alt="Enlarged Image">
+        <div id="modalText" class="modal-text"></div>
+        <span class="close" onclick="closeModal()">&times;</span>
+    </div>
 
     <!-- Jump to Images button -->
     <a href="#images" class="jump-to-images-btn">
@@ -251,12 +259,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Modal for Enlarged Image -->
-    <div id="imageModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage" src="">
-    </div>
 
     <!--footer-->
     <footer>
